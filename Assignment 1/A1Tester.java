@@ -116,19 +116,17 @@ public class A1Tester {
 
         // TODO: uncomment the following code to test this method
 
-	   /*
-		result = ArrayOperations.arrayMax(array1);
-		//System.out.println("should be 8: " + result);
-		displayResults(result==8, "testArrayMax");
+    		result = ArrayOperations.arrayMax(array1);
+    		//System.out.println("should be 8: " + result);
+    		displayResults(result==8, "testArrayMax");
 
-		result = ArrayOperations.arrayMax(array2);
-		//System.out.println("should be 3: " + result);
-		displayResults(result==3, "testArrayMax");
+    		result = ArrayOperations.arrayMax(array2);
+    		//System.out.println("should be 3: " + result);
+    		displayResults(result==3, "testArrayMax");
 
-		result = ArrayOperations.arrayMax(array3);
-		//System.out.println("should be 4: " + result);
-		displayResults(result==4, "testArrayMax");
-	   */
+    		result = ArrayOperations.arrayMax(array3);
+    		//System.out.println("should be 4: " + result);
+    		displayResults(result==4, "testArrayMax");
     }
 
     public static void testArrayMin() {
