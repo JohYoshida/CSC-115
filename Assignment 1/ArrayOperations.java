@@ -3,24 +3,24 @@ import java.lang.Math;
 /*
  * ArrayOperations
  *
- * Rules: 
+ * Rules:
  *  - DO NOT use builtin java Arrays methods
  *
  * A class with basic array methods to
  *  - print the values in an array
- *  - calculate the sum of all values in an array 
+ *  - calculate the sum of all values in an array
  *  - calculate the product of all values in an array
  *  - calculate the minimum value in an array
  *  - calculate the maximum value in an array
  *  - determine whether all values in an array are below a given value
- *  - determine whether an array contains a given value 
- *  - determine whether all the values in one array are found 
+ *  - determine whether an array contains a given value
+ *  - determine whether all the values in one array are found
  *      in another array (in the same order)
  *
  */
 public class ArrayOperations {
-	
-	
+
+
     /*
      * printArray
      *
@@ -38,11 +38,11 @@ public class ArrayOperations {
 			System.out.print(array[i]);
 			if(i<array.length-1) {
 				System.out.print(",");
-			}	
+			}
 		}
 		System.out.println("}");
 	}
-	
+
 	/*
      * sumArray
      *
@@ -77,7 +77,7 @@ public class ArrayOperations {
     public static int productArray ( int[] array ) {
         int product = 1;
 
-        // TODO: add code here
+				// TODO: add code here
 
         return product;
     }
@@ -112,7 +112,7 @@ public class ArrayOperations {
     // TODO: Write the arrayMin method here
 
 
-    
+
     /*
      * allBelowValue
      *
@@ -125,7 +125,7 @@ public class ArrayOperations {
      *
      */
      // TODO: Write the allBelowValue method here
-    
+
     /*
      * containsValue
      *
@@ -137,13 +137,13 @@ public class ArrayOperations {
      * Returns: boolean - true if value is found, false otherwise
      *
      */
-    
-	
+
+
 	/*
      * containsArray
      *
-     * Purpose: determines whether the array searchArray contains 
-	 *          all of the values in array nums in the same order 
+     * Purpose: determines whether the array searchArray contains
+	 *          all of the values in array nums in the same order
      *
      * Parameters: int[] nums - array of integers that must be found
      *             int[] searchArray - array of integers to search through
@@ -151,5 +151,5 @@ public class ArrayOperations {
      * Returns: boolean - true if all values in nums found, false otherwise
      *
      */
-	
+
 }

@@ -5,7 +5,7 @@
  *
  */
 public class A1Tester {
-    
+
 	private static int testPassCount = 0;
 	private static int testCount = 0;
 
@@ -24,7 +24,7 @@ public class A1Tester {
 
 
     public static void main(String[] args) {
-        
+
 		// First, we call the printArray method in the ArrayOperations class
 		// which prints the contents of the arrays we pass it
 		ArrayOperations.printArray(array0);
@@ -35,27 +35,27 @@ public class A1Tester {
 		// Next, we call the testSumArray method, which tests the SumArray
 		// method found in the ArrayOperations class. The method is completed
 		// for you. Read how the tests are formed - and how I determine what
-		// the result should be, given the arrays defined above. 
+		// the result should be, given the arrays defined above.
 		testSumArray();
 
-		// 
+		//
 		testProductArray();
 		testArrayMax();
 		testArrayMin();
 		testAllBelowValue();
 		testContainsValue();
 		testContainsArray();
-			   
+
 		System.out.println("Passed " + testPassCount + "/" + testCount + " tests");
     }
-    
+
     public static void displayResults (boolean passed, String testName)
     {
        /* There is some magic going on here getting the line number
         * Borrowed from:
         * http://blog.taragana.com/index.php/archive/core-java-how-to-get-java-source-code-line-number-file-name-in-code/
         */
-        
+
         testCount++;
         if (passed)
         {
@@ -71,51 +71,51 @@ public class A1Tester {
 
     public static void testSumArray() {
         int result = 0;
-        
+
         result = ArrayOperations.sumArray(array0);
         //System.out.println("should be 0: " + result); // You may uncomment this to help with debugging
         displayResults(result==0, "testSumArray");
-        
+
         result = ArrayOperations.sumArray(array1);
         //System.out.println("should be 8: " + result);
         displayResults(result==8, "testSumArray");
-        
+
         result = ArrayOperations.sumArray(array2);
         //System.out.println("should be 7: " + result);
         displayResults(result==7, "testSumArray");
-        
+
         result = ArrayOperations.sumArray(array3);
         //System.out.println("should be 9: " + result);
         displayResults(result==9, "testSumArray");
-        
+
     }
-    
+
     public static void testProductArray() {
         int result = 0;
-        
+
         result = ArrayOperations.productArray(array0);
-        //System.out.println("should be 1: " + result); // You may uncomment this to help with debugging
+        // System.out.println("should be 1: " + result); // You may uncomment this to help with debugging
         displayResults(result==1, "testProductArray");
-        
+
         result = ArrayOperations.productArray(array1);
-        //System.out.println("should be 8: " + result); 
+        // System.out.println("should be 8: " + result);
         displayResults(result==8, "testProductArray");
-        
+
         result = ArrayOperations.productArray(array2);
-        //System.out.println("should be 0: " + result);
+        // System.out.println("should be 0: " + result);
         displayResults(result==0, "testProductArray");
-        
+
         result = ArrayOperations.productArray(array3);
-        //System.out.println("should be -24: " + result);
+        // System.out.println("should be -24: " + result);
         displayResults(result==-24, "testProductArray");
-        
+
     }
-    
+
     public static void testArrayMax() {
         int result = 0;
-        
+
         // TODO: uncomment the following code to test this method
-        
+
 	   /*
 		result = ArrayOperations.arrayMax(array1);
 		//System.out.println("should be 8: " + result);
@@ -130,12 +130,12 @@ public class A1Tester {
 		displayResults(result==4, "testArrayMax");
 	   */
     }
-    
+
     public static void testArrayMin() {
         int result = 0;
-        
+
         // TODO: uncomment the following code to test this method
-        
+
         /*
 		result = ArrayOperations.arrayMin(array1);
 		//System.out.println("should be 8: " + result);
@@ -150,13 +150,13 @@ public class A1Tester {
 		displayResults(result==-1, "testArrayMin");
         */
     }
-    
-    
+
+
     public static void testAllBelowValue() {
         boolean result, shouldBe;
-        
+
         // TODO: uncomment the following code to test this method
-        
+
         /*
 		result = ArrayOperations.allBelowValue(array1, 7);
 		shouldBe = false;
@@ -189,12 +189,12 @@ public class A1Tester {
 		displayResults(result==shouldBe, "testAllBelowValue");
         */
     }
-    
+
     public static void testContainsValue() {
         boolean result;
-        
+
         // TODO: uncomment the following code to test this method
-        
+
        /*
 		result = ArrayOperations.containsValue(array2, 2);
 		//System.out.println("should be true: " + result);
@@ -217,13 +217,13 @@ public class A1Tester {
 		displayResults(!result, "testContainsValue");
        */
     }
-	
-	
+
+
     public static void testContainsArray() {
         boolean result;
-        
+
         // TODO: uncomment the following code to test this method
-        
+
        /*
 		result = ArrayOperations.containsArray(toFind, containsToFind1);
 		//System.out.println("should be true: " + result);
@@ -249,6 +249,6 @@ public class A1Tester {
 		//System.out.println("should be false: " + result);
 		displayResults(!result, "testContainsArray");
        */
-    }    
-    
+    }
+
 }
