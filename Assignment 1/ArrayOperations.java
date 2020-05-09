@@ -77,7 +77,9 @@ public class ArrayOperations {
     public static int productArray ( int[] array ) {
         int product = 1;
 
-				// TODO: add code here
+				for (int i = 0; i < array.length; i++) {
+					product = product * array[i];
+				}
 
         return product;
     }
