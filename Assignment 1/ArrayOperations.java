@@ -176,7 +176,7 @@ public class ArrayOperations {
      * containsArray
      *
      * Purpose: determines whether the array searchArray contains
-	 *          all of the values in array nums in the same order
+	 	 *          all of the values in array nums in the same order
      *
      * Parameters: int[] nums - array of integers that must be found
      *             int[] searchArray - array of integers to search through
@@ -184,5 +184,23 @@ public class ArrayOperations {
      * Returns: boolean - true if all values in nums found, false otherwise
      *
      */
+		public static boolean containsArray (int[] nums, int[] searchArray) {
+			int index = 0;
+			for (int i = 0; i < searchArray.length; i++) {
+				if (searchArray[i] == nums[index]) {
+					if (index < nums.length - 1) {
+						index++;
+					} else if (index == nums.length - 1) {
+						System.out.println("");
+						return true;
+					}
+				} else if (searchArray[i] == nums[0]) {
+					index = 1;
+				} else {
+					index = 0;
+				}
+			}
+			return false;
+		}
 
 }

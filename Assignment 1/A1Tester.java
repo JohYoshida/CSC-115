@@ -206,33 +206,29 @@ public class A1Tester {
     public static void testContainsArray() {
         boolean result;
 
-        // TODO: uncomment the following code to test this method
+    		result = ArrayOperations.containsArray(toFind, containsToFind1);
+    		//System.out.println("should be true: " + result);
+    		displayResults(result, "testContainsArray");
 
-       /*
-		result = ArrayOperations.containsArray(toFind, containsToFind1);
-		//System.out.println("should be true: " + result);
-		displayResults(result, "testContainsArray");
+    		result = ArrayOperations.containsArray(toFind, containsToFind2);
+    		//System.out.println("should be true: " + result);
+    		displayResults(result, "testContainsArray");
 
-		result = ArrayOperations.containsArray(toFind, containsToFind2);
-		//System.out.println("should be true: " + result);
-		displayResults(result, "testContainsArray");
+    		result = ArrayOperations.containsArray(toFind, containsToFind3);
+    		//System.out.println("should be true: " + result);
+    		displayResults(result, "testContainsArray");
 
-		result = ArrayOperations.containsArray(toFind, containsToFind3);
-		//System.out.println("should be true: " + result);
-		displayResults(result, "testContainsArray");
+    		result = ArrayOperations.containsArray(toFind, doesNotContainToFind1);
+    		//System.out.println("should be false: " + result);
+    		displayResults(!result, "testContainsArray");
 
-		result = ArrayOperations.containsArray(toFind, doesNotContainToFind1);
-		//System.out.println("should be false: " + result);
-		displayResults(!result, "testContainsArray");
+    		result = ArrayOperations.containsArray(toFind, doesNotContainToFind2);
+    		//System.out.println("should be false: " + result);
+    		displayResults(!result, "testContainsArray");
 
-		result = ArrayOperations.containsArray(toFind, doesNotContainToFind2);
-		//System.out.println("should be false: " + result);
-		displayResults(!result, "testContainsArray");
-
-		result = ArrayOperations.containsArray(toFind, doesNotContainToFind3);
-		//System.out.println("should be false: " + result);
-		displayResults(!result, "testContainsArray");
-       */
+    		result = ArrayOperations.containsArray(toFind, doesNotContainToFind3);
+    		//System.out.println("should be false: " + result);
+    		displayResults(!result, "testContainsArray");
     }
 
 }
