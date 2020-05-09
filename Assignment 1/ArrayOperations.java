@@ -119,7 +119,6 @@ public class ArrayOperations {
      * Returns:  int - minimum value in the array
      *
      */
-    // TODO: Write the arrayMin method here
     	public static int arrayMin ( int[] array ) {
 				int min = array[0];
 				for (int i = 1; i < array.length; i++) {
