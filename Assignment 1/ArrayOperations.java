@@ -162,6 +162,14 @@ public class ArrayOperations {
      * Returns: boolean - true if value is found, false otherwise
      *
      */
+    public static boolean containsValue ( int[] array, int value ) {
+			for (int i = 0; i < array.length; i++) {
+				if (array[i] == value) {
+					return true;
+				}
+			}
+			return false;
+		}
 
 
 	/*

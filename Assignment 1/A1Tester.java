@@ -181,29 +181,25 @@ public class A1Tester {
     public static void testContainsValue() {
         boolean result;
 
-        // TODO: uncomment the following code to test this method
+    		result = ArrayOperations.containsValue(array2, 2);
+    		//System.out.println("should be true: " + result);
+    		displayResults(result, "testContainsValue");
 
-       /*
-		result = ArrayOperations.containsValue(array2, 2);
-		//System.out.println("should be true: " + result);
-		displayResults(result, "testContainsValue");
+    		result = ArrayOperations.containsValue(array2, 4);
+    		//System.out.println("should be false: " + result);
+    		displayResults(!result, "testContainsValue");
 
-		result = ArrayOperations.containsValue(array2, 4);
-		//System.out.println("should be false: " + result);
-		displayResults(!result, "testContainsValue");
+    		result = ArrayOperations.containsValue(array3, 4);
+    		//System.out.println("should be true: " + result);
+    		displayResults(result, "testContainsValue");
 
-		result = ArrayOperations.containsValue(array3, 4);
-		//System.out.println("should be true: " + result);
-		displayResults(result, "testContainsValue");
+    		result = ArrayOperations.containsValue(array3, 3);
+    		//System.out.println("should be true: " + result);
+    		displayResults(result, "testContainsValue");
 
-		result = ArrayOperations.containsValue(array3, 3);
-		//System.out.println("should be true: " + result);
-		displayResults(result, "testContainsValue");
-
-		result = ArrayOperations.containsValue(array3, 5);
-		//System.out.println("should be false: " + result);
-		displayResults(!result, "testContainsValue");
-       */
+    		result = ArrayOperations.containsValue(array3, 5);
+    		//System.out.println("should be false: " + result);
+    		displayResults(!result, "testContainsValue");
     }
 
 
