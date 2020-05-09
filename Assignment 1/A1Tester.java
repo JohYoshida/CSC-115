@@ -147,39 +147,35 @@ public class A1Tester {
     public static void testAllBelowValue() {
         boolean result, shouldBe;
 
-        // TODO: uncomment the following code to test this method
+    		result = ArrayOperations.allBelowValue(array1, 7);
+    		shouldBe = false;
+    		//System.out.println("should be: " + shouldBe);
+    		//System.out.println("it is: " + result);
+    		displayResults(result==shouldBe, "testAllBelowValue");
 
-        /*
-		result = ArrayOperations.allBelowValue(array1, 7);
-		shouldBe = false;
-		//System.out.println("should be: " + shouldBe);
-		//System.out.println("it is: " + result);
-		displayResults(result==shouldBe, "testAllBelowValue");
+    		result = ArrayOperations.allBelowValue(array1, 8);
+    		shouldBe = false;
+    		//System.out.println("should be: " + shouldBe);
+    		//System.out.println("it is: " + result);
+    		displayResults(result==shouldBe, "testAllBelowValue");
 
-		result = ArrayOperations.allBelowValue(array1, 8);
-		shouldBe = false;
-		//System.out.println("should be: " + shouldBe);
-		//System.out.println("it is: " + result);
-		displayResults(result==shouldBe, "testAllBelowValue");
+    		result = ArrayOperations.allBelowValue(array1, 9);
+    		shouldBe = true;
+    		//System.out.println("should be: " + shouldBe);
+    		//System.out.println("it is: " + result);
+    		displayResults(result==shouldBe, "testAllBelowValue");
 
-		result = ArrayOperations.allBelowValue(array1, 9);
-		shouldBe = true;
-		//System.out.println("should be: " + shouldBe);
-		//System.out.println("it is: " + result);
-		displayResults(result==shouldBe, "testAllBelowValue");
+    		result = ArrayOperations.allBelowValue(array2, 4);
+    		shouldBe = true;
+    		//System.out.println("should be: " + shouldBe);
+    		//System.out.println("it is: " + result);
+    		displayResults(result==shouldBe, "testAllBelowValue");
 
-		result = ArrayOperations.allBelowValue(array2, 4);
-		shouldBe = true;
-		//System.out.println("should be: " + shouldBe);
-		//System.out.println("it is: " + result);
-		displayResults(result==shouldBe, "testAllBelowValue");
-
-		result = ArrayOperations.allBelowValue(array2, 3);
-		shouldBe = false;
-		//System.out.println("should be: " + shouldBe);
-		//System.out.println("it is: " + result);
-		displayResults(result==shouldBe, "testAllBelowValue");
-        */
+    		result = ArrayOperations.allBelowValue(array2, 3);
+    		shouldBe = false;
+    		//System.out.println("should be: " + shouldBe);
+    		//System.out.println("it is: " + result);
+    		displayResults(result==shouldBe, "testAllBelowValue");
     }
 
     public static void testContainsValue() {

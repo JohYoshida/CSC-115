@@ -143,7 +143,14 @@ public class ArrayOperations {
      * Returns: boolean - true if all values below, false otherwise
      *
      */
-     // TODO: Write the allBelowValue method here
+     public static boolean allBelowValue ( int[] array, int threshold ) {
+			 for (int i = 0; i < array.length; i++) {
+			 		if (array[i] >= threshold) {
+						return false;
+					}
+			 }
+			 return true;
+		 }
 
     /*
      * containsValue
