@@ -1,22 +1,43 @@
 // Song.java
 
 public class Song {
-	//     1. generalize what you use to describe a song?
-	//      these dictate the fields/attributes in our Song class
-		
-	//     2. create fields in Song class
-		
-	//     3. go to tester and create some song objects...
+  private String title;
+  private String artist;
 
-	//     4. change fields to private in Song class
-		
-	//     5. add getters and setters for fields
+  public Song(String initialTitle, String initialArtist) {
+    title  = initialTitle;
+    artist = initialArtist;
+  }
 
-	//     6. how do we initialize a song with data upon creation?
-	//            - add a custom constructor
+  public Song(String initialTitle) {
+    title  = initialTitle;
+    artist = "Unknown Artist";
+  }
 
-	//     7. add a toString method
-	//          - takes no arguments and returns a String
-	//            representing this object
-   
+  public Song() {
+    title  = "Unknown Title";
+    artist = "Unknown Artist";
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getArtist() {
+    return artist;
+  }
+
+  public void setTitle(String newTitle) {
+    title = newTitle;
+  }
+
+  public void setArtist(String newArtist) {
+    artist = newArtist;
+  }
+
+  // String representation of an object.
+  // This method is automatically called when we print out an object
+  public String toString() {
+    return "Title: " + title + " - Artist: " + artist;
+  }
 }
