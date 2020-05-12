@@ -47,7 +47,7 @@ public class Lab1 {
   public static double getAverage(int a, int b, int c) {
     double result = 0;
 
-    result = a + b + c / 3.0;
+    result = (a + b + c) / 3.0;
 
     return result;
   }
