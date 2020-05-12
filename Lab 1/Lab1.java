@@ -22,9 +22,13 @@ public class Lab1 {
   public static String getString(int[] array) {
     String result = "{";
 
-    for (int i = 0; i < array.length - 1; i++)
-    {
-      result += array[i] + ",";
+    for (int i = 0; i < array.length; i++) {
+      if (i != array.length - 1) {
+        result += array[i] + ",";
+      }
+      else {
+        result += array[i];
+      }
     }
     result += "}";
 
@@ -62,14 +66,11 @@ public class Lab1 {
   public static int countAbove(int[] array, int threshold) {
     int count = 0;
 
-    for (int i = 0; i < array.length; i++)
-    {
-      if (array[i] > threshold)
-      {
+    for (int i = 0; i < array.length; i++) {
+      if (array[i] > threshold) {
         count++;
       }
-      else
-      {
+      else{
         return count;
       }
     }
@@ -89,10 +90,8 @@ public class Lab1 {
   public static int getMax(int[] array) {
     int max = 0;
 
-    for (int i = 0; i < array.length - 1; i++)
-    {
-      if (array[i + 1] > array[i])
-      {
+    for (int i = 0; i < array.length - 1; i++) {
+      if (array[i + 1] > array[i]) {
         max = array[i];
       }
     }
@@ -111,14 +110,11 @@ public class Lab1 {
    *
    */
   public static boolean isSorted(int[] array) {
-    for (int i = 0; i < array.length - 1; i++)
-    {
-      if (array[i + 1] <= array[i])
-      {
+    for (int i = 0; i < array.length - 1; i++) {
+      if (array[i + 1] <= array[i]) {
         return false;
       }
-      else
-      {
+      else{
         return true;
       }
     }
