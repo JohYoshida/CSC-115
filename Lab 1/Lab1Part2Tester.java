@@ -27,13 +27,11 @@ public class Lab1Part2Tester {
      */
 
     testCount++;
-    if (passed)
-    {
+    if (passed) {
       System.out.println("Passed test: " + testName);
       testPassCount++;
     }
-    else
-    {
+    else{
       System.out.println("Failed test: " + testName + " at line "
                          + Thread.currentThread().getStackTrace()[2].getLineNumber());
     }
