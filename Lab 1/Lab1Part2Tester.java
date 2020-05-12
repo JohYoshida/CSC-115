@@ -1,4 +1,9 @@
 /*
+ * Joh Yoshida
+ * V00798535
+ */
+
+/*
  * Lab1Part2Tester.java
  *
  * A tester for the methods in your Student class
@@ -38,65 +43,63 @@ public class Lab1Part2Tester {
   }
 
   public static void testConstructorsAndGetters() {
-    // Tests constructor with no arguments, getSID and getGrade
-    // TODO: once you have created a Student class with
-    //  default constructor, getSID and getGrade methods
-    //  uncomment the following to test these
+    Student s = new Student();
+    String sID;
+    int grade;
 
-    /*
-     * Student s = new Student();
-     * String sID;
-     * int grade;
-     *
-     * sID = s.getSID();
-     * displayResults( sID.equals(""), "test no args constructor and getSID");
-     * grade = s.getGrade();
-     * displayResults( grade == -1, "test no args constructor and getSID");
-     */
+    sID = s.getSID();
+    displayResults(sID.equals(""), "test no args constructor and getSID");
+    grade = s.getGrade();
+    displayResults(grade == -1, "test no args constructor and getGrade");
 
-    // TODO:
-    //  Once you have added the second contructor to your Student class,
-    //  write tests to test constructor with arguments using getSID and getGrade
-    //  as we did for the constructor with no arguments.
+    Student s2 = new Student("V00798535", 100);
+    sID = s2.getSID();
+    displayResults(sID.equals("V00798535"), "test two args constructor and getSID");
+    grade = s2.getGrade();
+    displayResults(grade == 100, "test two args constructor and getGrade");
   }
 
   public static void testSettersAndGetters() {
-    // TODO: create a student object and test setSID and setGrade
-    // hint: use getSID and getGrade methods to get values
-    //       as done in testConstructorsAndGetters
+    Student s = new Student();
+    String sID;
+    int grade;
+
+    s.setSID("V00798535");
+    sID = s.getSID();
+    displayResults(sID.equals("V00798535"), "test setSID and getSID");
+    s.setGrade(100);
+    grade = s.getGrade();
+    displayResults(grade == 100, "test setGrade and getGrade");
   }
 
   public static void testToString() {
-    // TODO: once you have written toString in the Student class,
-    //  create a student object and test the toString method
+    Student s = new Student("V00798535", 100);
+    String toString;
+
+    toString = s.toString();
+    displayResults(toString.equals("Student ID: V00798535\nGrade: 100"), "test toString");
   }
 
   public static void testEquals() {
-    // TODO: once you have written equals in the Student class,
-    //  uncomment the following tests
+    Student s1a = new Student("abc", 10);
+    Student s1b = new Student("abc", 10);
+    Student s1c = new Student("abc", 20);
+    Student s2a = new Student("abcd", 10);
+    Student s2b = new Student("abcd", 20);
 
-    /*
-     * Student s1a = new Student("abc", 10);
-     * Student s1b = new Student("abc", 10);
-     * Student s1c = new Student("abc", 20);
-     * Student s2a = new Student("abcd", 10);
-     * Student s2b = new Student("abcd", 20);
-     *
-     *
-     * // the following 2 tests are equivalent - can you see this?
-     * // check with your TA if you are unsure
-     * displayResults( s1a.equals(s1a), "test equals method - true");
-     * displayResults( s1a.equals(s1a) == true, "test equals method - true");
-     *
-     * displayResults( s1a.equals(s1b), "test equals method - true");
-     * displayResults( s1a.equals(s1c), "test equals method - true");
-     *
-     * // the following 2 tests are equivalent - can you see this?
-     * // check with your TA if you are unsure
-     * displayResults( !s1a.equals(s2a), "test equals method - false");
-     * displayResults( s1a.equals(s2a) == false, "test equals method - false");
-     *
-     * displayResults( !s1a.equals(s2b), "test equals method - false");
-     */
+    // the following 2 tests are equivalent - can you see this?
+    // check with your TA if you are unsure
+    displayResults(s1a.equals(s1a), "test equals method - true");
+    displayResults(s1a.equals(s1a) == true, "test equals method - true");
+
+    displayResults(s1a.equals(s1b), "test equals method - true");
+    displayResults(s1a.equals(s1c), "test equals method - true");
+
+    // the following 2 tests are equivalent - can you see this?
+    // check with your TA if you are unsure
+    displayResults(!s1a.equals(s2a), "test equals method - false");
+    displayResults(s1a.equals(s2a) == false, "test equals method - false");
+
+    displayResults(!s1a.equals(s2b), "test equals method - false");
   }
 }
