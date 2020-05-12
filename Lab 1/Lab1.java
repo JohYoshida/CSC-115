@@ -70,9 +70,6 @@ public class Lab1 {
       if (array[i] > threshold) {
         count++;
       }
-      else{
-        return count;
-      }
     }
 
     return count;
