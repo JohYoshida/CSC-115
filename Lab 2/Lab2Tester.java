@@ -85,8 +85,6 @@ public class Lab2Tester {
   }
 
   public static void testGetClasslist() {
-    // TODO: write tests for Lab2.getClasslist
-
     // NOTE: the Arrays library has been imported for you.
     //  you can use the Arrays.equals method to compare
     //  2 arrays of String objects as String has a equals method
@@ -94,32 +92,42 @@ public class Lab2Tester {
     //  equals(Object[] a, Object[] a2)
     //  Returns true if the two specified arrays of Objects are equal to one another.
 
-    // ToDo: once you have implemented getClasslist in Lab2.java
+    // TODO: once you have implemented getClasslist in Lab2.java
     //  uncomment the following test
     // We have gotten you started with some initial test data and one test,
     // but you should consider other cases (empty array, longer array)
 
+    Student s0 = new Student("abc", 50);
+    Student s1 = new Student("def", 50);
+    Student s2 = new Student("ghi", 50);
 
-    // Student s0  = new Student("abc", 50);
-    // Student[] students1 = {s0};
-    // String[] expected1 = {"abc"};
-    //
-    // String[] result;
-    //
-    // result = Lab2.getClasslist(students1);
-    // displayResults(Arrays.equals(result, expected1), "testGetClasslist - 1 elements");
+    Student[] students0 = { };
+    String[] expected0  = { };
+    Student[] students1 = { s0 };
+    String[] expected1  = { "abc" };
+    Student[] students2 = { s0, s1, s2 };
+    String[] expected2  = { "abc", "def", "ghi" };
+
+    String[] result;
+
+    result = Lab2.getClasslist(students0);
+    displayResults(Arrays.equals(result, expected0), "testGetClasslist - 1 elements");
+    result = Lab2.getClasslist(students1);
+    displayResults(Arrays.equals(result, expected1), "testGetClasslist - 1 elements");
+    result = Lab2.getClasslist(students2);
+    displayResults(Arrays.equals(result, expected2), "testGetClasslist - 3 elements");
   }
 
   public static void testCountAbove() {
-    // ToDo: write tests for Lab2.countAbove
+    // TODO: write tests for Lab2.countAbove
   }
 
   public static void testGetClassAverage() {
-    // ToDo: write tests for Lab2.getClassAverage
+    // TODO: write tests for Lab2.getClassAverage
   }
 
   public static void testRegisterStudent() {
-    // ToDo: write tests for Lab2.registerStudent
+    // TODO: write tests for Lab2.registerStudent
     // HINT: the Student class also has a equals method so you
     //  can use Arrays.equals again to compare 2 Student arrays
   }

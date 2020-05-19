@@ -59,8 +59,14 @@ public class Lab2 {
    * Returns: String[] - array of sIDs
    *
    */
-  // ToDo: implement getClasslist
+  public static String[] getClasslist(Student[] students) {
+    String[] classlist = new String[students.length];
 
+    for (int i = 0; i < students.length; i++) {
+      classlist[i] = students[i].getSID();
+    }
+    return classlist;
+  }
 
   /*
    *
@@ -72,7 +78,7 @@ public class Lab2 {
    * Returns: int - the count
    *
    */
-  // ToDo: implement countAbove
+  // TODO: implement countAbove
   // HINT: you should be using the isGradeAbove method!
 
 
@@ -88,7 +94,7 @@ public class Lab2 {
    * Returns: double - the average grade
    *
    */
-  // ToDo: implement getClassAverage
+  // TODO: implement getClassAverage
   // HINT: you can use the isGradeAbove method again
 
 
@@ -102,5 +108,5 @@ public class Lab2 {
    * Returns: Student[] - the new array
    *
    */
-  // ToDo: implement registerStudent
+  // TODO: implement registerStudent
 }
