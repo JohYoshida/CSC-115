@@ -24,9 +24,12 @@ public class Lab2 {
    *
    */
   public static Student getHigherGradeStudent(Student s1, Student s2) {
-    // TODO: implement getHigherGradeStudent
-
-    return null;
+    if (s1.getGrade() >= s2.getGrade()) {
+      return s1;
+    }
+    else {
+      return s2;
+    }
   }
 
   /*

@@ -47,28 +47,28 @@ public class Lab2Tester {
     //  uncomment the following tests - make sure you understand what they are testing
 
 
-    // Student s0  = new Student("abc", 50);
-    // Student s1a = new Student("def", 56);
-    // Student s1b = new Student("xyz", 56);
-    // Student s2  = new Student("xyz", 99);
-    //
-    // Student result;
-    //
-    // result = Lab2.getHigherGradeStudent(s0,s1a);
-    // //System.out.println("should be  " + s1a + " is " + result);
-    // displayResults(result.equals(s1a), "testGetHigherGradeStudent");
-    //
-    // result = Lab2.getHigherGradeStudent(s1a,s0);
-    // //System.out.println("should be  " + s1a + " is " + result);
-    // displayResults(result.equals(s1a), "testGetHigherGradeStudent");
-    //
-    // result = Lab2.getHigherGradeStudent(s1b,s1a);
-    // //System.out.println("should be  " + s1b + " is " + result);
-    // displayResults(result.equals(s1b) && result == s1b, "testGetHigherGradeStudent");
-    //
-    // result = Lab2.getHigherGradeStudent(s1b,s2);
-    // //System.out.println("should be  " + s2 + " is " + result);
-    // displayResults(result.equals(s2), "testGetHigherGradeStudent");
+    Student s0  = new Student("abc", 50);
+    Student s1a = new Student("def", 56);
+    Student s1b = new Student("xyz", 56);
+    Student s2  = new Student("xyz", 99);
+
+    Student result;
+
+    result = Lab2.getHigherGradeStudent(s0, s1a);
+    //System.out.println("should be  " + s1a + " is " + result);
+    displayResults(result.equals(s1a), "testGetHigherGradeStudent");
+
+    result = Lab2.getHigherGradeStudent(s1a, s0);
+    //System.out.println("should be  " + s1a + " is " + result);
+    displayResults(result.equals(s1a), "testGetHigherGradeStudent");
+
+    result = Lab2.getHigherGradeStudent(s1b, s1a);
+    //System.out.println("should be  " + s1b + " is " + result);
+    displayResults(result.equals(s1b) && result == s1b, "testGetHigherGradeStudent");
+
+    result = Lab2.getHigherGradeStudent(s1b, s2);
+    //System.out.println("should be  " + s2 + " is " + result);
+    displayResults(result.equals(s2), "testGetHigherGradeStudent");
   }
 
   public static void testIsGradeAbove() {
