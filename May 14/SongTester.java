@@ -12,34 +12,35 @@ public class SongTester {
 
 
     // /* Q2a. What will be the output of the following: */
-    // Song mySong = null;
+    Song mySong = null;
     // System.out.println("My song: " + mySong.getTitle());
 
 
     // /* Q2b. What will be the output of the following: */
-    // mySong = s1;
+    mySong = s1;
     // System.out.println("Song s1: " + s1.getTitle());
-    // System.out.println("My song: "  + mySong.getTitle());
+    // System.out.println("My song: " + mySong.getTitle());
 
     // /* Q2c. What will be the output of the following: */
-    // mySong.setTitle("Living on a Prayer");
-    // System.out.println("Song s1: "  + s1.getTitle());
+    mySong.setTitle("Living on a Prayer");
+    // System.out.println("Song s1: " + s1.getTitle());
     // System.out.println("My song: " + mySong.getTitle());
 
 
     // /* Q3. The following code tests the addTime method.
     // Complete the stub for the addTime method in Song.java */
-    // s1.addTime(100);
-    // System.out.println("expect length 100: " + s1);
-    // s1.addTime(10);
-    // System.out.println("expect length 110: " + s1);
+    s1.addTime(100);
+    System.out.println("expect length 100: " + s1);
+    s1.addTime(10);
+    System.out.println("expect length 110: " + s1);
 
     // /* Q4a. What is the output of the following? */
-    // if (s1 == mySong) {
-    // System.out.println("s1 == mySong");
-    // } else {
-    // System.out.println("s1 != mySong");
-    // }
+    if (s1 == mySong) {
+      System.out.println("s1 == mySong");
+    }
+    else {
+      System.out.println("s1 != mySong");
+    }
 
 
     /* Q4b. What is the output of the following?
@@ -67,7 +68,11 @@ public class SongTester {
 
 
     /* Q5a. Create an array of Songs to store our songs */
+    Song[] playlist = { s1, s2, s3, s4 };
 
+    for (int i = 0; i < playlist.length; i++) {
+      System.out.println("playlist[" + i + "] " + playlist[i]);
+    }
 
 
     /* Q5b. Write and test a method called getPlaylistLength that takes an

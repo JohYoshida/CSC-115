@@ -36,7 +36,7 @@ public class Song {
    * Returns: nothing
    */
   public void setTitle(String title) {
-    title = title;
+    this.title = title;
   }
 
   /*
@@ -54,7 +54,7 @@ public class Song {
    * Returns: nothing
    */
   public void setArtist(String artist) {
-    artist = artist;
+    this.artist = artist;
   }
 
   /*
@@ -72,7 +72,7 @@ public class Song {
    * Returns: nothing
    */
   public void setDuration(int duration) {
-    duration = duration;
+    this.duration = duration;
   }
 
   /*
@@ -92,6 +92,7 @@ public class Song {
    * Returns: void
    */
   public void addTime(int amount) {
+    this.duration += amount;
   }
 
   /*
@@ -100,6 +101,20 @@ public class Song {
    * Returns: boolean - true if they are equal, false otherwise
    */
   public boolean equals(Song other) {
-    return true;
+    if (this.title.equals(other.title)) {
+      if (this.artist.equals(other.artist)) {
+        if (this.duration == other.duration) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  public static int getPlaylistLength(Song[] array) {
+    for (int i = 0; i < array.length; i++) {
+      sum += array[i].getDuration();
+    }
+    return sum;
   }
 }
