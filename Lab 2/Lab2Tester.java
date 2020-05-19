@@ -143,6 +143,30 @@ public class Lab2Tester {
 
   public static void testGetClassAverage() {
     // TODO: write tests for Lab2.getClassAverage
+    Student s1 = new Student("a", 0);
+    Student s2 = new Student("b", 50);
+    Student s3 = new Student("c", 100);
+    Student s4 = new Student("d", 69);
+    Student s5 = new Student("e", 68);
+
+    Student[] students1 = { s2, s2, s2 };
+    Student[] students2 = { s1, s1, s1, s2, s2, s2 };
+    Student[] students3 = { s1, s2, s3 };
+    Student[] students4 = { s1, s2, s3, s4 };
+    Student[] students5 = { s1, s2, s3, s5 };
+
+    double result;
+
+    result = Lab2.getClassAverage(students1);
+    displayResults(result == 50.0, "testGetClassAverage");
+    result = Lab2.getClassAverage(students2);
+    displayResults(result == 50.0, "testGetClassAverage");
+    result = Lab2.getClassAverage(students3);
+    displayResults(result == 75.0, "testGetClassAverage");
+    result = Lab2.getClassAverage(students4);
+    displayResults(result == 73.0, "testGetClassAverage");
+    System.out.println(result);
+    displayResults(result == 72.66666666666667, "testGetClassAverage");
   }
 
   public static void testRegisterStudent() {

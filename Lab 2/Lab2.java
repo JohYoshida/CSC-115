@@ -100,9 +100,22 @@ public class Lab2 {
    * Returns: double - the average grade
    *
    */
-  // TODO: implement getClassAverage
-  // HINT: you can use the isGradeAbove method again
+  public static double getClassAverage(Student[] students) {
+    double average = 0.0;
+    int zeroes     = 0;
 
+    for (int i = 0; i < students.length; i++) {
+      if (isGradeAbove(students[i], 0)) {
+        average += students[i].getGrade();
+      }
+      else {
+        zeroes++;
+      }
+    }
+    average /= (students.length - zeroes);
+
+    return average;
+  }
 
   /*
    *
