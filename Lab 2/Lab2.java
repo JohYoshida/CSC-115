@@ -43,9 +43,12 @@ public class Lab2 {
    *          false otherwise
    *
    */
-  // TODO: implement isGradeAbove
-
-
+  public static boolean isGradeAbove(Student s, int threshold) {
+    if (s.getGrade() > threshold) {
+      return true;
+    }
+    return false;
+  }
 
   /*
    *

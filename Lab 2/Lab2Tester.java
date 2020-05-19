@@ -43,10 +43,6 @@ public class Lab2Tester {
   }
 
   public static void testGetHigherGradeStudent() {
-    // TODO: once you have implemented getHigherGradeStudent in Lab2.java
-    //  uncomment the following tests - make sure you understand what they are testing
-
-
     Student s0  = new Student("abc", 50);
     Student s1a = new Student("def", 56);
     Student s1b = new Student("xyz", 56);
@@ -72,11 +68,24 @@ public class Lab2Tester {
   }
 
   public static void testIsGradeAbove() {
-    // ToDo: write tests for Lab2.isGradeAbove
+    Student s1 = new Student("abc", 51);
+    Student s2 = new Student("def", 49);
+    Student s3 = new Student("ghi", 50);
+
+    boolean result;
+
+    result = Lab2.isGradeAbove(s1, 50);
+    displayResults(result == true, "testIsGradeAbove");
+
+    result = Lab2.isGradeAbove(s2, 50);
+    displayResults(result == false, "testIsGradeAbove");
+
+    result = Lab2.isGradeAbove(s3, 50);
+    displayResults(result == false, "testIsGradeAbove");
   }
 
   public static void testGetClasslist() {
-    // ToDo: write tests for Lab2.getClasslist
+    // TODO: write tests for Lab2.getClasslist
 
     // NOTE: the Arrays library has been imported for you.
     //  you can use the Arrays.equals method to compare
