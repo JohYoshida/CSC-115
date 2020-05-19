@@ -169,8 +169,22 @@ public class Lab2Tester {
   }
 
   public static void testRegisterStudent() {
-    // TODO: write tests for Lab2.registerStudent
-    // HINT: the Student class also has a equals method so you
-    //  can use Arrays.equals again to compare 2 Student arrays
+    Student s1 = new Student("a", 0);
+    Student s2 = new Student("b", 50);
+    Student s3 = new Student("c", 100);
+    Student s4 = new Student("d", 69);
+    Student s5 = new Student("e", 68);
+
+    Student[] students0 = {};
+    Student[] expected0 = { s1 };
+    Student[] students1 = { s1, s2, s3 };
+    Student[] expected1 = { s1, s2, s3, s4 };
+
+    Student[] result;
+
+    result = Lab2.registerStudent(students0, s1);
+    displayResults(Arrays.equals(result, expected0), "testRegisterStudent");
+    result = Lab2.registerStudent(students1, s4);
+    displayResults(Arrays.equals(result, expected1), "testRegisterStudent");
   }
 }

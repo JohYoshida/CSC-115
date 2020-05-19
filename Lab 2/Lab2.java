@@ -127,5 +127,13 @@ public class Lab2 {
    * Returns: Student[] - the new array
    *
    */
-  // TODO: implement registerStudent
+  public static Student[] registerStudent(Student[] students, Student s) {
+    Student[] updatedStudents = new Student[students.length + 1];
+    for (int i = 0; i < students.length; i++) {
+      updatedStudents[i] = students[i];
+    }
+    updatedStudents[students.length] = s;
+
+    return updatedStudents;
+  }
 }
