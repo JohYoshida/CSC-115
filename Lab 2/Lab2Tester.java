@@ -111,7 +111,7 @@ public class Lab2Tester {
     String[] result;
 
     result = Lab2.getClasslist(students0);
-    displayResults(Arrays.equals(result, expected0), "testGetClasslist - 1 elements");
+    displayResults(Arrays.equals(result, expected0), "testGetClasslist - 0 elements");
     result = Lab2.getClasslist(students1);
     displayResults(Arrays.equals(result, expected1), "testGetClasslist - 1 elements");
     result = Lab2.getClasslist(students2);
@@ -120,6 +120,25 @@ public class Lab2Tester {
 
   public static void testCountAbove() {
     // TODO: write tests for Lab2.countAbove
+    Student s1 = new Student("abc", 51);
+    Student s2 = new Student("def", 49);
+    Student s3 = new Student("ghi", 50);
+
+    Student[] students0 = {};
+    Student[] students1 = { s1, s2, s3 };
+
+    int result;
+
+    result = Lab2.countAbove(students0, 0);
+    displayResults(result == 0, "testCountAbove");
+    result = Lab2.countAbove(students1, 51);
+    displayResults(result == 0, "testCountAbove");
+    result = Lab2.countAbove(students1, 50);
+    displayResults(result == 1, "testCountAbove");
+    result = Lab2.countAbove(students1, 49);
+    displayResults(result == 2, "testCountAbove");
+    result = Lab2.countAbove(students1, 48);
+    displayResults(result == 3, "testCountAbove");
   }
 
   public static void testGetClassAverage() {

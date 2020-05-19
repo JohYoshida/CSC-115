@@ -78,10 +78,16 @@ public class Lab2 {
    * Returns: int - the count
    *
    */
-  // TODO: implement countAbove
-  // HINT: you should be using the isGradeAbove method!
+  public static int countAbove(Student[] students, int threshold) {
+    int count = 0;
 
-
+    for (int i = 0; i < students.length; i++) {
+      if (isGradeAbove(students[i], threshold)) {
+        count++;
+      }
+    }
+    return count;
+  }
 
   /*
    *
