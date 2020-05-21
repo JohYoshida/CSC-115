@@ -31,19 +31,34 @@ public class A2Aligner implements Aligner {
   }
 
   public int errorsAtOffset(int index, String subsequence) {
-    int count = 0;
+    char[] dataSequence = sequence.toCharArray();
+    char[] toFind       = subsequence.toCharArray();
+    int count           = 0;
 
-    // TODO: complete this
+    for (int i = 0; i < toFind.length; i++) {
+      // Handle cases before sequence indices
+      if (i + index < 0) {
+        count++;
+      }
+      // Handle cases after sequence indices
+      else if (i + index >= dataSequence.length) {
+        count++;
+      }
+      else {
+        // Compare subsequence value to corresponding sequence value at offset
+        if (toFind[i] != dataSequence[i + index]) {
+          // Increment error count if no match
+          count++;
+        }
+      }
+    }
+
     return count;
   }
 
   public void bestAlignmentOffset(String subsequence) {
     // TODO: Complete this
   }
-
-  // TODO: add getMethods for instance variables
-  // (and add any helper methods you feel are necessary)
-
 
   public String toString() {
     String s = "Data sequence: " + sequence + "\n";

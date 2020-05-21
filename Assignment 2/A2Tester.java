@@ -43,21 +43,30 @@ public class A2Tester {
     int result   = 0;
     A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
 
-    // result = a1.errorsAtOffset(0, "TGAC");
-    // displayResults(result==0, "testErrorsAtOffset");
-    // result = a1.errorsAtOffset(0, "TTAC");
-    // displayResults(result==1, "testErrorsAtOffset");
-    // result = a1.errorsAtOffset(0, "ACTGAC");
-    // displayResults(result==6, "testErrorsAtOffset");
-    //
-    // result = a1.errorsAtOffset(7, "CCGA");
-    // displayResults(result==0, "testErrorsAtOffset");
-    // result = a1.errorsAtOffset(10, "ATCG");
-    // displayResults(result==3, "testErrorsAtOffset");
-
-    // Add tests here to ensure your
-    // implementation works with other
-    // sequences, subsequences, and offsets
+    result = a1.errorsAtOffset(0, "TGAC");
+    displayResults(result == 0, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(0, "TTAC");
+    displayResults(result == 1, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(0, "ACTGAC");
+    displayResults(result == 6, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(7, "CCGA");
+    displayResults(result == 0, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(10, "ATCG");
+    displayResults(result == 3, "testErrorsAtOffset: index at last sequence char");
+    result = a1.errorsAtOffset(11, "ATCG");
+    displayResults(result == 4, "testErrorsAtOffset: index past last sequence char");
+    result = a1.errorsAtOffset(-1, "xTGA");
+    displayResults(result == 1, "testErrorsAtOffset: index before first sequence char");
+    result = a1.errorsAtOffset(-4, "CCGA");
+    displayResults(result == 4, "testErrorsAtOffset: index before first sequence char");
+    result = a1.errorsAtOffset(0, "TGACTTCCCGAx");
+    displayResults(result == 1, "testErrorsAtOffset: longer subsequence");
+    result = a1.errorsAtOffset(1, "GACTTCCCGAxx");
+    displayResults(result == 2, "testErrorsAtOffset: longer subsequence, positive offset");
+    result = a1.errorsAtOffset(-1, "xTGACTTCCCGA");
+    displayResults(result == 1, "testErrorsAtOffset: longer subsequence, negative offset");
+    result = a1.errorsAtOffset(0, "xTGACTTCCCGA");
+    displayResults(result == 9, "testErrorsAtOffset: longer subsequence, one-offset error");
   }
 
   public static void testBestAlignmentOffset() {
