@@ -27,16 +27,16 @@ public class A2Tester {
     // Uncomment the tests below once you have implemented
     // the constructor and the getter methods
 
+    A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
 
-    // A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
-    // s = a1.getSequence();
-    // displayResults(s.equals("TGACTTCCCGA"), "testObjectBasics");
-    // s = a1.getLastTested();
-    // displayResults(s.equals(""), "testObjectBasics");
-    // result = a1.getOffset();
-    // displayResults(result==-1, "testObjectBasics");
-    // result = a1.getNumErrors();
-    // displayResults(result==-1, "testObjectBasics");
+    s = a1.getSequence();
+    displayResults(s.equals("TGACTTCCCGA"), "testObjectBasics: getSequence");
+    s = a1.getLastTested();
+    displayResults(s.equals(""), "testObjectBasics: getLastTested");
+    result = a1.getOffset();
+    displayResults(result == -1, "testObjectBasics: getOffset");
+    result = a1.getNumErrors();
+    displayResults(result == -1, "testObjectBasics: getNumErrors");
   }
 
   public static void testErrorsAtOffset() {
