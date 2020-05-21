@@ -57,11 +57,10 @@ public class A2Aligner implements Aligner {
   }
 
   public void bestAlignmentOffset(String subsequence) {
-    char[] dataSequence = sequence.toCharArray();
-    char[] toFind       = subsequence.toCharArray();
     int errors;
-    numErrors = dataSequence.length;
-    for (int i = 0; i < dataSequence.length; i++) {
+
+    numErrors = sequence.length();
+    for (int i = 0; i < sequence.length(); i++) {
       errors = errorsAtOffset(i, subsequence);
 
       if (errors < numErrors) {
