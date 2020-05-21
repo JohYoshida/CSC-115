@@ -13,9 +13,13 @@ public class A2Tester {
 
   public static void main(String[] args) {
     testObjectBasics();
+    System.out.print("\n");
     testErrorsAtOffset();
+    System.out.print("\n");
     testBestAlignmentOffset();
+    System.out.print("\n");
     testGetUserInput(args);
+    System.out.print("\n");
 
     System.out.println("Passed " + testPassCount + "/" + testCount + " tests");
   }
@@ -24,78 +28,86 @@ public class A2Tester {
     int result = 0;
     String s   = "";
 
-    // Uncomment the tests below once you have implemented
-    // the constructor and the getter methods
+    A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
 
-    /*
-     * A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
-     * s = a1.getSequence();
-     * displayResults(s.equals("TGACTTCCCGA"), "testObjectBasics");
-     * s = a1.getLastTested();
-     * displayResults(s.equals(""), "testObjectBasics");
-     * result = a1.getOffset();
-     * displayResults(result==-1, "testObjectBasics");
-     * result = a1.getNumErrors();
-     * displayResults(result==-1, "testObjectBasics");
-     */
+    s = a1.getSequence();
+    displayResults(s.equals("TGACTTCCCGA"), "testObjectBasics: getSequence");
+    s = a1.getLastTested();
+    displayResults(s.equals(""), "testObjectBasics: getLastTested");
+    result = a1.getOffset();
+    displayResults(result == -1, "testObjectBasics: getOffset");
+    result = a1.getNumErrors();
+    displayResults(result == -1, "testObjectBasics: getNumErrors");
   }
 
   public static void testErrorsAtOffset() {
     int result   = 0;
     A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
 
-    /*
-     * result = a1.errorsAtOffset(0, "TGAC");
-     * displayResults(result==0, "testErrorsAtOffset");
-     * result = a1.errorsAtOffset(0, "TTAC");
-     * displayResults(result==1, "testErrorsAtOffset");
-     * result = a1.errorsAtOffset(0, "ACTGAC");
-     * displayResults(result==6, "testErrorsAtOffset");
-     *
-     * result = a1.errorsAtOffset(7, "CCGA");
-     * displayResults(result==0, "testErrorsAtOffset");
-     * result = a1.errorsAtOffset(10, "ATCG");
-     * displayResults(result==3, "testErrorsAtOffset");
-     *
-     * // Add tests here to ensure your
-     * // implementation works with other
-     * // sequences, subsequences, and offsets
-     *
-     */
+    result = a1.errorsAtOffset(0, "TGAC");
+    displayResults(result == 0, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(0, "TTAC");
+    displayResults(result == 1, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(0, "ACTGAC");
+    displayResults(result == 6, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(7, "CCGA");
+    displayResults(result == 0, "testErrorsAtOffset");
+    result = a1.errorsAtOffset(10, "ATCG");
+    displayResults(result == 3, "testErrorsAtOffset: index at last sequence char");
+    result = a1.errorsAtOffset(11, "ATCG");
+    displayResults(result == 4, "testErrorsAtOffset: index past last sequence char");
+    result = a1.errorsAtOffset(-1, "xTGA");
+    displayResults(result == 1, "testErrorsAtOffset: index before first sequence char");
+    result = a1.errorsAtOffset(-4, "CCGA");
+    displayResults(result == 4, "testErrorsAtOffset: index before first sequence char");
+    result = a1.errorsAtOffset(0, "TGACTTCCCGAx");
+    displayResults(result == 1, "testErrorsAtOffset: longer subsequence");
+    result = a1.errorsAtOffset(1, "GACTTCCCGAxx");
+    displayResults(result == 2, "testErrorsAtOffset: longer subsequence, positive offset");
+    result = a1.errorsAtOffset(-1, "xTGACTTCCCGA");
+    displayResults(result == 1, "testErrorsAtOffset: longer subsequence, negative offset");
+    result = a1.errorsAtOffset(0, "xTGACTTCCCGA");
+    displayResults(result == 9, "testErrorsAtOffset: longer subsequence, one-offset error");
   }
 
   public static void testBestAlignmentOffset() {
     A2Aligner a1 = new A2Aligner("TGACTTCCCGA");
 
-    /*
-     *
-     * a1.bestAlignmentOffset("TGAC");
-     * displayResults(a1.getOffset()==0, "testBestAlignmentOffset");
-     * displayResults(a1.getNumErrors()==0, "testBestAlignmentOffset");
-     * displayResults(a1.getLastTested().equals("TGAC"), "testBestAlignmentOffset");
-     *
-     * a1.bestAlignmentOffset("TCGA");
-     * displayResults(a1.getOffset()==7, "testBestAlignmentOffset");
-     * displayResults(a1.getNumErrors()==1, "testBestAlignmentOffset");
-     * displayResults(a1.getLastTested().equals("TCGA"), "testBestAlignmentOffset");
-     *
-     *
-     * // Add tests here to ensure your
-     * // implementation works with other
-     * // sequences, subsequences, and offsets
-     *
-     */
+    a1.bestAlignmentOffset("TGAC");
+    displayResults(a1.getOffset() == 0, "testBestAlignmentOffset");
+    displayResults(a1.getNumErrors() == 0, "testBestAlignmentOffset");
+    displayResults(a1.getLastTested().equals("TGAC"), "testBestAlignmentOffset");
+
+    a1.bestAlignmentOffset("TCGA");
+    displayResults(a1.getOffset() == 7, "testBestAlignmentOffset");
+    displayResults(a1.getNumErrors() == 1, "testBestAlignmentOffset");
+    displayResults(a1.getLastTested().equals("TCGA"), "testBestAlignmentOffset");
+
+    A2Aligner a2 = new A2Aligner("ACGGTACGGAGTCTTGAAGT");
+
+    a2.bestAlignmentOffset("GTTA");
+    displayResults(a2.getOffset() == 2, "testBestAlignmentOffset");
+    displayResults(a2.getNumErrors() == 1, "testBestAlignmentOffset");
+    displayResults(a2.getLastTested().equals("GTTA"), "testBestAlignmentOffset");
+
+    a2.bestAlignmentOffset("CAGT");
+    displayResults(a2.getOffset() == 1, "testBestAlignmentOffset");
+    displayResults(a2.getNumErrors() == 1, "testBestAlignmentOffset");
+    displayResults(a2.getLastTested().equals("CAGT"), "testBestAlignmentOffset");
+
+    A2Aligner a3 = new A2Aligner("CAGATACCATAGGGCATGC");
+
+    a3.bestAlignmentOffset("ATAxC");
+    displayResults(a3.getOffset() == 3, "testBestAlignmentOffset");
+    displayResults(a3.getNumErrors() == 1, "testBestAlignmentOffset");
+    displayResults(a3.getLastTested().equals("ATAxC"), "testBestAlignmentOffset");
   }
 
   public static void testGetUserInput(String[] args) {
-    /*
-     *
-     * // Visually inspect the output:
-     * System.out.println("\nResults from command-line input:");
-     * A2Aligner a1 = getUserInput(args);
-     * System.out.println(a1);
-     *
-     */
+    // Visually inspect the output:
+    System.out.println("\nResults from command-line input:");
+    A2Aligner a1 = getUserInput(args);
+    System.out.println(a1);
   }
 
   /*
@@ -123,8 +135,15 @@ public class A2Tester {
    *					Errors detected: -1
    */
   public static A2Aligner getUserInput(String[] args) {
-    // TODO: complete this
-    A2Aligner a = new A2Aligner("invalid");
+    A2Aligner a;
+
+    if (args.length != 2) {
+      a = new A2Aligner("invalid");
+    }
+    else {
+      a = new A2Aligner(args[0]);
+      a.bestAlignmentOffset(args[1]);
+    }
 
     return a;
   }
