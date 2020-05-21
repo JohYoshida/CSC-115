@@ -8,9 +8,26 @@ public class A2Aligner implements Aligner {
   private int offset;
 
   public A2Aligner(String sequence) {
-    // TODO: complete this
-    // SimpleAligner.java illustrates how instance
-    // variables can be initialized before testing
+    this.sequence = sequence;
+    lastTested    = "";
+    offset        = -1;
+    numErrors     = -1;
+  }
+
+  public String getSequence() {
+    return sequence;
+  }
+
+  public String getLastTested() {
+    return lastTested;
+  }
+
+  public int getNumErrors() {
+    return numErrors;
+  }
+
+  public int getOffset() {
+    return offset;
   }
 
   public int errorsAtOffset(int index, String subsequence) {
