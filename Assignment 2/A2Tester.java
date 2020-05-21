@@ -105,9 +105,9 @@ public class A2Tester {
 
   public static void testGetUserInput(String[] args) {
     // Visually inspect the output:
-    // System.out.println("\nResults from command-line input:");
-    // A2Aligner a1 = getUserInput(args);
-    // System.out.println(a1);
+    System.out.println("\nResults from command-line input:");
+    A2Aligner a1 = getUserInput(args);
+    System.out.println(a1);
   }
 
   /*
@@ -135,8 +135,15 @@ public class A2Tester {
    *					Errors detected: -1
    */
   public static A2Aligner getUserInput(String[] args) {
-    // TODO: complete this
-    A2Aligner a = new A2Aligner("invalid");
+    A2Aligner a;
+
+    if (args.length != 2) {
+      a = new A2Aligner("invalid");
+    }
+    else {
+      a = new A2Aligner(args[0]);
+      a.bestAlignmentOffset(args[1]);
+    }
 
     return a;
   }
