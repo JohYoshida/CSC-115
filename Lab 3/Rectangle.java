@@ -32,7 +32,7 @@ public class Rectangle implements Shape {
    * Returns: double - the area of the shape
    */
   public double area() {
-    return 0.0;
+    return length * width;
   }
 
   /*
