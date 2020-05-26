@@ -1,3 +1,8 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
+
 public class Rectangle implements Shape {
   private int length;     //length units along x axis
   private int width;      //width units along y axis

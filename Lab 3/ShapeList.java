@@ -1,3 +1,9 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
+
+
 public class ShapeList {
   private static final int INIT_SZ = 2;
 
