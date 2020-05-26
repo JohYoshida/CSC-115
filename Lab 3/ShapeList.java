@@ -37,7 +37,22 @@ public class ShapeList {
    * Returns: nothing
    */
   public void add(Shape s) {
-    // TODO
+    if (this.size() == elements.length) {
+      Shape[] newElements = new Shape[this.size() + 1];
+      for (int i = 0; i < elements.length; i++) {
+        newElements[i] = elements[i];
+      }
+      newElements[elements.length] = s;
+      elements = newElements;
+    }
+    else {
+      for (int i = 0; i < elements.length; i++) {
+        if (elements[i] == null) {
+          elements[i] = s;
+          return;
+        }
+      }
+    }
   }
 
   /*
