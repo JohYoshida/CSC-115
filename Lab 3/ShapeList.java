@@ -78,6 +78,13 @@ public class ShapeList {
    * Returns: nothing
    */
   public void removeFront() {
-    // TODO
+    if (elements.length == 0) {
+      return;
+    }
+    Shape[] newElements = new Shape[this.size() - 1];
+    for (int i = 0; i < newElements.length; i++) {
+      newElements[i] = elements[i + 1];
+    }
+    elements = newElements;
   }
 }
