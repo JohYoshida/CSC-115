@@ -18,7 +18,7 @@ public class Lab3Tester {
     testRectangleArea();
     testRectanglePerimeter();
     testRectangleContains();
-    //testShapeList();
+    testShapeList();
 
     System.out.println("Passed " + testPassCount + "/" + testCount + " tests");
   }
@@ -54,7 +54,6 @@ public class Lab3Tester {
 
     expected = 4 * 5;
     result   = r45.area();
-    System.out.println(result);
     displayResults(Math.abs(result - expected) < THRESHOLD, "testRectangleArea - 4 by 5");
   }
 
@@ -145,8 +144,8 @@ public class Lab3Tester {
 
     String resultString   = l.toString();
     String expectedString = r00.toString() + "\n";
-    System.out.println("result:" + resultString);
-    System.out.println("expected:" + expectedString);
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
     displayResults(resultString.equals(expectedString), "test add with toString");
 
 
@@ -155,12 +154,114 @@ public class Lab3Tester {
 
     resultString   = l.toString();
     expectedString = r00.toString() + "\n" + c25.toString() + "\n";
-    System.out.println("result:" + resultString);
-    System.out.println("expected:" + expectedString);
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
     displayResults(resultString.equals(expectedString), "test add with toString");
 
+    l.add(r00);
+    displayResults(l.size() == 3, "test add with size");
 
-    // TODO: add test to see if your ShapeList will expand when needed
+    resultString   = l.toString();
+    expectedString = r00.toString() + "\n"
+                     + c25.toString() + "\n"
+                     + r00.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test add with toString");
+
+    l.add(r00);
+    displayResults(l.size() == 4, "test add with size");
+
+    resultString   = l.toString();
+    expectedString = r00.toString() + "\n"
+                     + c25.toString() + "\n"
+                     + r00.toString() + "\n"
+                     + r00.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test add with toString");
+
+    l.add(c25);
+    displayResults(l.size() == 5, "test add with size");
+
+    resultString   = l.toString();
+    expectedString = r00.toString() + "\n"
+                     + c25.toString() + "\n"
+                     + r00.toString() + "\n"
+                     + r00.toString() + "\n"
+                     + c25.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test add with toString");
+
+    l.removeFront();
+    displayResults(l.size() == 4, "test removeFront with size");
+
+    resultString   = l.toString();
+    expectedString = c25.toString() + "\n"
+                     + r00.toString() + "\n"
+                     + r00.toString() + "\n"
+                     + c25.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
+
+    l.removeFront();
+    displayResults(l.size() == 3, "test removeFront with size");
+
+    resultString   = l.toString();
+    expectedString = r00.toString() + "\n"
+                     + r00.toString() + "\n"
+                     + c25.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
+
+    l.removeFront();
+    displayResults(l.size() == 2, "test removeFront with size");
+
+    resultString   = l.toString();
+    expectedString = r00.toString() + "\n"
+                     + c25.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
+
+    l.removeFront();
+    displayResults(l.size() == 1, "test removeFront with size");
+
+    resultString   = l.toString();
+    expectedString = c25.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
+
+    l.removeFront();
+    displayResults(l.size() == 0, "test removeFront with size");
+
+    resultString   = l.toString();
+    expectedString = "";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
+
+    l.removeFront();
+    displayResults(l.size() == 0, "test removeFront with size for 0-length list");
+
+    resultString   = l.toString();
+    expectedString = "";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
+
+    l.add(c25);
+    displayResults(l.size() == 1, "test add with size");
+
+    resultString   = l.toString();
+    expectedString = c25.toString() + "\n";
+    System.out.println("result:   " + resultString);
+    System.out.println("expected: " + expectedString);
+    displayResults(resultString.equals(expectedString), "test removeFront with toString");
   }
 
   public static void displayResults(boolean passed, String testName) {
