@@ -41,7 +41,7 @@ public class Rectangle implements Shape {
    * Returns: double - the perimeter of the shape
    */
   public double perimeter() {
-    return 0.0;
+    return (length + width) * 2;
   }
 
   /*
