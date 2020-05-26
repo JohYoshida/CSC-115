@@ -25,4 +25,42 @@ public class Rectangle implements Shape {
     this.width    = width;
     this.position = position;
   }
+
+  /*
+   * Purpose: calculates the area of this Shape
+   * Parameters: none
+   * Returns: double - the area of the shape
+   */
+  public double area() {
+    return 0.0;
+  }
+
+  /*
+   * Purpose: calculates the perimeter of this Shape
+   * Parameters: none
+   * Returns: double - the perimeter of the shape
+   */
+  public double perimeter() {
+    return 0.0;
+  }
+
+  /*
+   * Purpose: determines whether p is within this Shape
+   * Parameters: none
+   * Precondition: p is not null
+   * Returns: boolean - true if p is with this Shape,
+   *          false otherwise
+   */
+  public boolean contains(Point p) {
+    return false;
+  }
+
+  /*
+   * Purpose: returns a String reprensentation of this Shape
+   * Parameters: none
+   * Returns: String - the representation
+   */
+  public String toString() {
+    return "Rectangle";
+  }
 }
