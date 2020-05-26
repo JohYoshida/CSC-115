@@ -52,6 +52,21 @@ public class Rectangle implements Shape {
    *          false otherwise
    */
   public boolean contains(Point p) {
+    int ptX = p.getX();
+    int ptY = p.getY();
+
+    int positionX = position.getX();
+    int positionY = position.getY();
+
+    if (positionX <= ptX) {
+      if (ptX <= positionX + length) {
+        if (positionY <= ptY) {
+          if (ptY <= positionY + width) {
+            return true;
+          }
+        }
+      }
+    }
     return false;
   }
 
