@@ -61,6 +61,6 @@ public class Rectangle implements Shape {
    * Returns: String - the representation
    */
   public String toString() {
-    return "Rectangle";
+    return "Rectangle of dimensions: " + length + " by " + width + " at Point: " + position;
   }
 }
