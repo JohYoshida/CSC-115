@@ -41,9 +41,14 @@ public class ShapeList {
    * Returns: String - the representation
    */
   public String toString() {
-    // TODO
+    String string = "";
 
-    return "";
+    for (int i = 0; i < elements.length; i++) {
+      if (elements[i] != null) {
+        string += elements[i].toString() + "\n";
+      }
+    }
+    return string;
   }
 
   /*
