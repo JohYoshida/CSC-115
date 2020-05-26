@@ -21,8 +21,14 @@ public class ShapeList {
    * Returns: int - the number of elements
    */
   public int size() {
-    // TODO
-    return 0;
+    int size = 0;
+
+    for (int i = 0; i < elements.length; i++) {
+      if (elements[i] != null) {
+        size++;
+      }
+    }
+    return size;
   }
 
   /*
