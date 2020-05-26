@@ -11,6 +11,8 @@ public class ShapeList {
   int count;
 
   public ShapeList() {
+    elements = new Shape[INIT_SZ];
+    int count = 0;
   }
 
   /*
