@@ -102,14 +102,23 @@ public class StudentLinkedList implements StudentList {
 
   /*
    *
-   * Purpose:
+   * Purpose: Checks the linked list's data nodes for the given data
    *
-   * Parameters:
+   * Parameters: Student - the requred data
    *
-   * Returns:
+   * Returns: boolean - the results of the check
    *
    */
   public boolean contains(Student student) {
+    if (head != null) {
+      StudentNode cur = head;
+      while (cur != null) {
+        if (cur.getData().equals(student)) {
+          return true;
+        }
+        cur = head.next;
+      }
+    }
     return false;
   }
 }
