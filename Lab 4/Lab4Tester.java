@@ -56,11 +56,13 @@ public class Lab4Tester {
   public static void testList() {
     // TODO: add tests to see if your StudentList methods are correct
     Student s0              = new Student("abc", 50);
+    Student s0b             = new Student("abc", 50);
     Student s1              = new Student("def", 56);
     Student s2              = new Student("xyz", 99);
     Student s2b             = new Student("xyz", 29);
     StudentLinkedList list1 = new StudentLinkedList();
     StudentLinkedList list2 = new StudentLinkedList();
+    StudentLinkedList list3 = new StudentLinkedList();
 
     displayResults(list1.size() == 0, "test constructor with size");
     displayResults(list1.toString().equals(""), "test constructor with toString");
@@ -94,6 +96,17 @@ public class Lab4Tester {
     list2.removeFront();
     displayResults(list2.size() == 0, "test removeFront with size, emptied list");
     displayResults(list2.toString().equals(""), "test removeFront with toString, emptied list");
+
+    displayResults(list3.contains(s0) == false, "test contains, empty list");
+    list3.add(s0);
+    displayResults(list3.contains(s0) == true, "test contains, true");
+    displayResults(list3.contains(s1) == false, "test contains, false");
+    list3.removeFront();
+    displayResults(list3.contains(s0) == false, "test contains, emptied list");
+    list3.add(s0);
+    list3.add(s0b);
+    displayResults(list3.contains(s0) == true, "test contains, different nodes same data");
+    displayResults(list3.contains(s0b) == true, "test contains, different nodes same data");
   }
 
   public static void displayResults(boolean passed, String testName) {
