@@ -59,7 +59,7 @@ public class StudentNode {
    *
    */
   public Student getData() {
-    return null;
+    return data;
   }
 
   /*
