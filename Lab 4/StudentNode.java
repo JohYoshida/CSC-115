@@ -15,6 +15,7 @@ public class StudentNode {
 
   public StudentNode(Student data) {
     this.data = data;
+    this.next = null;
   }
 
   public StudentNode(Student data, StudentNode next) {
