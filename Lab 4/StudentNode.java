@@ -9,7 +9,6 @@
  * A StudentNode class
  *
  */
-
 public class StudentNode {
   public StudentNode next;
   private Student data;
