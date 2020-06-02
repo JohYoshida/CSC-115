@@ -72,5 +72,6 @@ public class StudentNode {
    *
    */
   public void setData(Student data) {
+    this.data = data;
   }
 }
