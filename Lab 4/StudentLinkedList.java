@@ -40,7 +40,7 @@ public class StudentLinkedList implements StudentList {
    *
    */
   public int size() {
-    return 0;
+    return count;
   }
 
   /*
