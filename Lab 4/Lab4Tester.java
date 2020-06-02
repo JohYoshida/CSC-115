@@ -55,7 +55,26 @@ public class Lab4Tester {
 
   public static void testList() {
     // TODO: add tests to see if your StudentList methods are correct
-    //
+    Student s0             = new Student("abc", 50);
+    Student s1             = new Student("def", 56);
+    Student s2             = new Student("xyz", 99);
+    Student s2b            = new Student("xyz", 29);
+    StudentLinkedList list = new StudentLinkedList();
+
+    displayResults(list.size() == 0, "test constructor with size");
+    displayResults(list.toString().equals(""), "test constructor with toString");
+    list.add(s0);
+    displayResults(list.size() == 1, "test add with size");
+    displayResults(list.toString().equals("abc:50\n"), "test add with toString");
+    list.add(s1);
+    displayResults(list.size() == 2, "test add with size");
+    displayResults(list.toString().equals("abc:50\ndef:56\n"), "test add with toString");
+    list.add(s2);
+    displayResults(list.size() == 3, "test add with size");
+    displayResults(list.toString().equals("abc:50\ndef:56\nxyz:99\n"), "test add with toString");
+    list.add(s2b);
+    displayResults(list.size() == 4, "test add with size");
+    displayResults(list.toString().equals("abc:50\ndef:56\nxyz:99\nxyz:29\n"), "test add with toString");
   }
 
   public static void displayResults(boolean passed, String testName) {
