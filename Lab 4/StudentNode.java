@@ -46,6 +46,7 @@ public class StudentNode {
    *
    */
   public void setNext(StudentNode next) {
+    this.next = next;
   }
 
   /*
