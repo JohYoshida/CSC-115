@@ -89,6 +89,15 @@ public class StudentLinkedList implements StudentList {
    *
    */
   public void removeFront() {
+    if (head != null) {
+      if (head.next != null) {
+        head = head.next;
+      }
+      else {
+        head = null;
+      }
+      count--;
+    }
   }
 
   /*
