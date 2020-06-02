@@ -33,7 +33,7 @@ public class StudentNode {
    *
    */
   public StudentNode getNext() {
-    return null;
+    return next;
   }
 
   /*
