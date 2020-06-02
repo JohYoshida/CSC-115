@@ -55,26 +55,45 @@ public class Lab4Tester {
 
   public static void testList() {
     // TODO: add tests to see if your StudentList methods are correct
-    Student s0             = new Student("abc", 50);
-    Student s1             = new Student("def", 56);
-    Student s2             = new Student("xyz", 99);
-    Student s2b            = new Student("xyz", 29);
-    StudentLinkedList list = new StudentLinkedList();
+    Student s0              = new Student("abc", 50);
+    Student s1              = new Student("def", 56);
+    Student s2              = new Student("xyz", 99);
+    Student s2b             = new Student("xyz", 29);
+    StudentLinkedList list1 = new StudentLinkedList();
+    StudentLinkedList list2 = new StudentLinkedList();
 
-    displayResults(list.size() == 0, "test constructor with size");
-    displayResults(list.toString().equals(""), "test constructor with toString");
-    list.add(s0);
-    displayResults(list.size() == 1, "test add with size");
-    displayResults(list.toString().equals("abc:50\n"), "test add with toString");
-    list.add(s1);
-    displayResults(list.size() == 2, "test add with size");
-    displayResults(list.toString().equals("abc:50\ndef:56\n"), "test add with toString");
-    list.add(s2);
-    displayResults(list.size() == 3, "test add with size");
-    displayResults(list.toString().equals("abc:50\ndef:56\nxyz:99\n"), "test add with toString");
-    list.add(s2b);
-    displayResults(list.size() == 4, "test add with size");
-    displayResults(list.toString().equals("abc:50\ndef:56\nxyz:99\nxyz:29\n"), "test add with toString");
+    displayResults(list1.size() == 0, "test constructor with size");
+    displayResults(list1.toString().equals(""), "test constructor with toString");
+    list1.add(s0);
+    displayResults(list1.size() == 1, "test add with size");
+    displayResults(list1.toString().equals("abc:50\n"), "test add with toString");
+    list1.add(s1);
+    displayResults(list1.size() == 2, "test add with size");
+    displayResults(list1.toString().equals("abc:50\ndef:56\n"), "test add with toString");
+    list1.add(s2);
+    displayResults(list1.size() == 3, "test add with size");
+    displayResults(list1.toString().equals("abc:50\ndef:56\nxyz:99\n"), "test add with toString");
+    list1.add(s2b);
+    displayResults(list1.size() == 4, "test add with size");
+    displayResults(list1.toString().equals("abc:50\ndef:56\nxyz:99\nxyz:29\n"), "test add with toString");
+
+    displayResults(list2.size() == 0, "test removeFront with size, empty list");
+    displayResults(list2.toString().equals(""), "test removeFront with toString, empty list");
+    list2.add(s0);
+    list2.removeFront();
+    displayResults(list2.size() == 0, "test removeFront with size, emptied list");
+    displayResults(list2.toString().equals(""), "test removeFront with toString, emptied list");
+    list2.add(s0);
+    list2.add(s1);
+    list2.removeFront();
+    displayResults(list2.size() == 1, "test removeFront with size = 1");
+    displayResults(list2.toString().equals("def:56\n"), "test removeFront with toString, size = 1");
+    list2.removeFront();
+    displayResults(list2.size() == 0, "test removeFront with size, emptied list");
+    displayResults(list2.toString().equals(""), "test removeFront with toString, emptied list");
+    list2.removeFront();
+    displayResults(list2.size() == 0, "test removeFront with size, emptied list");
+    displayResults(list2.toString().equals(""), "test removeFront with toString, emptied list");
   }
 
   public static void displayResults(boolean passed, String testName) {
