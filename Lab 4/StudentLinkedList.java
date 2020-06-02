@@ -28,6 +28,20 @@ public class StudentLinkedList implements StudentList {
    *
    */
   public void add(Student student) {
+    StudentNode node = new StudentNode(student);
+
+    if (head == null) {
+      head = node;
+      count++;
+    }
+    else {
+      StudentNode cur = head;
+      while (cur.next != null) {
+        cur = cur.next;
+      }
+      cur.next = node;
+      count++;
+    }
   }
 
   /*
