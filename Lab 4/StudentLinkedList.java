@@ -53,7 +53,16 @@ public class StudentLinkedList implements StudentList {
    *
    */
   public String toString() {
-    return null;
+    String s = "";
+
+    if (head != null) {
+      StudentNode cur = head;
+      while (cur != null) {
+        s  += cur.getData().toString() + "\n";
+        cur = cur.next;
+      }
+    }
+    return s;
   }
 
   /*
