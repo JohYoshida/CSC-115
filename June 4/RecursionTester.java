@@ -7,7 +7,7 @@ public class RecursionTester {
     // in RecursionExercises.java, one at a time
 
     testSum();
-    // testSumSquares();
+    testSumSquares();
     // testSumOdd();
     // testSumArray();
     // testCountNegative();

@@ -19,8 +19,10 @@ public class RecursionExercises {
    * Preconditions: n > 0
    */
   public static int sumSquares(int n) {
-    // TODO: implement this method
-    return 0;             // so it compiles
+    if (n == 1) {
+      return 1;
+    }
+    return (n * n) + sumSquares(n - 1);
   }
 
   /*
