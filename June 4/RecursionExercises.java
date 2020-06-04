@@ -52,8 +52,10 @@ public class RecursionExercises {
    *                0 <= i < arr.length
    */
   public static int sumArray(int[] arr, int i) {
-    // TODO: implement this method
-    return 0;             // so it compiles
+    if (i == 0) {
+      return arr[0];
+    }
+    return arr[i] + sumArray(arr, i - 1);
   }
 
   /*
