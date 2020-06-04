@@ -67,8 +67,20 @@ public class RecursionExercises {
    *                0 <= i < arr.length
    */
   public static int countNegative(int[] arr, int i) {
-    // TODO: implement this method
-    return 0;             // so it compiles
+    if (i == 0) {
+      if (arr[0] < 0) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    }
+    else if (arr[i] < 0) {
+      return 1 + countNegative(arr, i - 1);
+    }
+    else {
+      return countNegative(arr, i - 1);
+    }
   }
 
   /*

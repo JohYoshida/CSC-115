@@ -10,7 +10,7 @@ public class RecursionTester {
     testSumSquares();
     testSumOdd();
     testSumArray();
-    // testCountNegative();
+    testCountNegative();
     // testCountEqualTo();
     // testAllAbove();
 
