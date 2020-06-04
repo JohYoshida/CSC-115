@@ -119,7 +119,14 @@ public class RecursionExercises {
    *                0 <= i < arr.length
    */
   public static boolean allAbove(int[] arr, int i, int n) {
-    // TODO: implement this method
-    return false;             // so it compiles
+    if (i == 0) {
+      if (arr[i] > n) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    return (arr[i] > n) && allAbove(arr, i - 1, n);
   }
 }

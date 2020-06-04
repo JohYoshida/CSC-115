@@ -12,7 +12,7 @@ public class RecursionTester {
     testSumArray();
     testCountNegative();
     testCountEqualTo();
-    // testAllAbove();
+    testAllAbove();
 
     System.out.println("\nPASSED " + testPassCount + "/" + testCount + " tests");
   }
