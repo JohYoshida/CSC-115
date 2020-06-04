@@ -32,8 +32,15 @@ public class RecursionExercises {
    * Preconditions: n > 0
    */
   public static int sumOdd(int n) {
-    // TODO: implement this method
-    return 0;             // so it compiles
+    if (n == 1) {
+      return 1;
+    }
+    else if (n % 2 == 1) {
+      return n + sumOdd(n - 1);
+    }
+    else {
+      return sumOdd(n - 1);
+    }
   }
 
   /*
