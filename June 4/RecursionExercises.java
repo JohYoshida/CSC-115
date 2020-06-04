@@ -93,8 +93,20 @@ public class RecursionExercises {
    *                0 <= i < arr.length
    */
   public static int countEqualTo(int[] arr, int i, int n) {
-    // TODO: implement this method
-    return 0;             // so it compiles
+    if (i == 0) {
+      if (arr[0] == n) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    }
+    else if (arr[i] == n) {
+      return 1 + countEqualTo(arr, i - 1, n);
+    }
+    else {
+      return countEqualTo(arr, i - 1, n);
+    }
   }
 
   /*
