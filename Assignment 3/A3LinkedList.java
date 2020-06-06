@@ -29,6 +29,19 @@ public class A3LinkedList implements A3List {
   }
 
   public void addBack(String s) {
+    A3Node node = new A3Node(s);
+
+    if (tail == null) {
+      head   = node;
+      tail   = node;
+      length = 1;
+    }
+    else {
+      tail.next = node;
+      node.prev = tail;
+      tail      = node;
+      length   += 1;
+    }
   }
 
   public int size() {
