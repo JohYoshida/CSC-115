@@ -53,9 +53,29 @@ public class A3LinkedList implements A3List {
   }
 
   public void removeFront() {
+    if (length <= 1) {
+      head   = null;
+      tail   = null;
+      length = 0;
+    }
+    else {
+      head      = head.next;
+      head.prev = null;
+      length--;
+    }
   }
 
   public void removeBack() {
+    if (length <= 1) {
+      head   = null;
+      tail   = null;
+      length = 0;
+    }
+    else {
+      tail      = tail.prev;
+      tail.next = null;
+      length--;
+    }
   }
 
   public void rotate(int n) {
