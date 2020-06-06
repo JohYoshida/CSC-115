@@ -40,7 +40,7 @@ public class A3LinkedList implements A3List {
       tail.next = node;
       node.prev = tail;
       tail      = node;
-      length   += 1;
+      length++;
     }
   }
 
