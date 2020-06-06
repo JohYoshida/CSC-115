@@ -13,6 +13,19 @@ public class A3LinkedList implements A3List {
   }
 
   public void addFront(String s) {
+    A3Node node = new A3Node(s);
+
+    if (head == null) {
+      head   = node;
+      tail   = node;
+      length = 1;
+    }
+    else {
+      head.prev = node;
+      node.next = head;
+      head      = node;
+      length   += 1;
+    }
   }
 
   public void addBack(String s) {
