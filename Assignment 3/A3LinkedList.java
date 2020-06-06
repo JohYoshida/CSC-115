@@ -1,5 +1,5 @@
-// Name:
-// Student number: v00
+// Name: Joh Yoshida
+// Student number: v00798535
 
 public class A3LinkedList implements A3List {
   private A3Node head;
