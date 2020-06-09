@@ -366,5 +366,26 @@ public class IntegerLinkedList {
    * Returns: boolean - true if all negative, false otherwise
    *
    */
-  // TODO: implement and test this method
+  public boolean isNegative() {
+    return isNegative(head);
+  }
+
+  /*
+   *
+   * Purpose: recursively determines whether all elements in this IntegerList are negative
+   *
+   * Parameters: IntegerNode - n
+   *
+   * Returns: boolean - true if all negative, false otherwise
+   *
+   */
+  private boolean isNegative(IntegerNode n) {
+    if (n == null) {
+      return true;
+    }
+    else if (n.getElement() >= 0) {
+      return false;
+    }
+    return isNegative(n.next);
+  }
 }
