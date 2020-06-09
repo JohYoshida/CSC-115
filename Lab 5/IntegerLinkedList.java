@@ -1,3 +1,7 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
 public class IntegerLinkedList {
   private IntegerNode head;
   private int count;
