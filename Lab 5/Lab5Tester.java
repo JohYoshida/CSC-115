@@ -7,11 +7,12 @@ public class Lab5Tester {
 
   public static void main(String[] args) {
     try {
-      // testAddOne();
-      // testAddOneRecursive();
+      testAddOne();
+      testAddOneRecursive();
       testDoubleRecursive();
       testDoubleOddsRecursive();
-      // testSumValues();
+      testSumValues();
+      testMultiplyValues();
       // testDoubleAtOddPositions();
     } catch (Exception e) {
       System.out.println("Your code threw an Exception.");
@@ -104,6 +105,28 @@ public class Lab5Tester {
 
     result = list3.sum();
     displayResults(result == 5, "testSumValues - length3");
+  }
+
+  public static void testMultiplyValues() {
+    IntegerLinkedList emptyList    = new IntegerLinkedList();
+    IntegerLinkedList list3        = new IntegerLinkedList();
+    IntegerLinkedList anotherList3 = new IntegerLinkedList();
+
+    list3.addFront(-2);
+    list3.addFront(0);
+    list3.addFront(7);
+    anotherList3.addFront(-2);
+    anotherList3.addFront(3);
+    anotherList3.addFront(7);
+
+    int result = emptyList.product();
+    displayResults(result == 1, "testSumValues - empty");
+
+    result = list3.product();
+    displayResults(result == 0, "testSumValues - length3");
+
+    result = anotherList3.product();
+    displayResults(result == -42, "testSumValues - length3");
   }
 
   public static void testDoubleAtOddPositions() {
