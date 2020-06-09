@@ -10,6 +10,7 @@ public class Lab5Tester {
       // testAddOne();
       // testAddOneRecursive();
       testDoubleRecursive();
+      testDoubleOddsRecursive();
       // testSumValues();
       // testDoubleAtOddPositions();
     } catch (Exception e) {
@@ -71,6 +72,23 @@ public class Lab5Tester {
     list3.doubleRecursive();
     System.out.println(list3);
     displayResults(list3.toString().equals("14 0 -4"), "testDouble - length3");
+  }
+
+  public static void testDoubleOddsRecursive() {
+    IntegerLinkedList emptyList = new IntegerLinkedList();
+    IntegerLinkedList list3     = new IntegerLinkedList();
+
+    list3.addFront(-2);
+    list3.addFront(0);
+    list3.addFront(7);
+
+    emptyList.doubleOddsRecursive();
+    System.out.println(emptyList);
+    displayResults(emptyList.toString().equals(""), "testDouble - empty");
+
+    list3.doubleOddsRecursive();
+    System.out.println(list3);
+    displayResults(list3.toString().equals("14 0 -2"), "testDouble - length3");
   }
 
   public static void testSumValues() {
