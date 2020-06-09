@@ -79,6 +79,12 @@ public class A3LinkedList implements A3List {
   }
 
   public void rotate(int n) {
+    A3Node temp = tail;
+
+    for (int i = 0; i < n; i++) {
+      addFront(tail.getData());
+      removeBack();
+    }
   }
 
   public void interleave(A3LinkedList other) {
