@@ -88,6 +88,26 @@ public class A3LinkedList implements A3List {
   }
 
   public void interleave(A3LinkedList other) {
+    A3Node temp1 = head;
+    A3Node temp2 = other.head;
+
+    while (temp1.next != null) {
+      A3Node first  = new A3Node(temp1.next.getData());
+      A3Node second = new A3Node(temp2.next.getData());
+
+      temp1.next.next.prev = second;
+      second.next          = temp1.next.next;
+      temp1.next           = second;
+      second.prev          = temp1;
+
+      temp2.next.next.prev = first;
+      first.next           = temp2.next.next;
+      temp2.next           = first;
+      first.prev           = temp2;
+
+      temp1 = temp1.next.next;
+      temp2 = temp2.next.next;
+    }
   }
 
   /* Purpose: return a string representation of the list
