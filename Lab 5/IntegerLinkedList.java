@@ -247,9 +247,30 @@ public class IntegerLinkedList {
    * Returns: int - the product
    *
    */
-  // TODO: implement and test this method
+  public int product() {
+    return product(head);
+  }
 
+  /*
+   *
+   * Purpose: recursively takes the product of the element in IntegerNode n and every element following n
+   *
+   * Parameters: IntegerNode - n
+   *
+   * Returns: int - the product
+   *
+   */
+  private int product(IntegerNode n) {
+    if (n == null) {
+      return 1;
+    }
+    else {
+      int first   = n.getElement();
+      int sumRest = product(n.next);
 
+      return first * sumRest;
+    }
+  }
 
   /*
    *
