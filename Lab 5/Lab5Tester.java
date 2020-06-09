@@ -7,10 +7,11 @@ public class Lab5Tester {
 
   public static void main(String[] args) {
     try {
-      testAddOne();
-      testAddOneRecursive();
-      testSumValues();
-      testDoubleAtOddPositions();
+      // testAddOne();
+      // testAddOneRecursive();
+      testDoubleRecursive();
+      // testSumValues();
+      // testDoubleAtOddPositions();
     } catch (Exception e) {
       System.out.println("Your code threw an Exception.");
       System.out.println("Perhaps a stack trace will help:");
@@ -53,6 +54,23 @@ public class Lab5Tester {
     list3.addOneRecursive();
     System.out.println(list3);
     displayResults(list3.toString().equals("8 1 -1"), "testAddOne - length3");
+  }
+
+  public static void testDoubleRecursive() {
+    IntegerLinkedList emptyList = new IntegerLinkedList();
+    IntegerLinkedList list3     = new IntegerLinkedList();
+
+    list3.addFront(-2);
+    list3.addFront(0);
+    list3.addFront(7);
+
+    emptyList.doubleRecursive();
+    System.out.println(emptyList);
+    displayResults(emptyList.toString().equals(""), "testDouble - empty");
+
+    list3.doubleRecursive();
+    System.out.println(list3);
+    displayResults(list3.toString().equals("14 0 -4"), "testDouble - length3");
   }
 
   public static void testSumValues() {
