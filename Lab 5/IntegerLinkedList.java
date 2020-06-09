@@ -324,9 +324,38 @@ public class IntegerLinkedList {
    * Returns: boolean - true if sorted, false otherwise
    *
    */
-  // TODO: implement and test this method
+  public boolean isAscending() {
+    if (head == null) {
+      return true;
+    }
+    else if (head.next == null) {
+      return true;
+    }
+    else {
+      int prev = head.getElement();
+      return isAscending(head.next, prev);
+    }
+  }
 
-
+  /*
+   *
+   * Purpose: recursively determines whether every element in this IntegerList
+   *          is sorted in ascending order
+   *
+   * Parameters: IntegerNode - n, int - previous element value
+   *
+   * Returns: boolean
+   *
+   */
+  private boolean isAscending(IntegerNode n, int prev) {
+    if (n == null) {
+      return true;
+    }
+    else if (n.getElement() < prev) {
+      return false;
+    }
+    return isAscending(n.next, n.getElement());
+  }
 
   /*
    *
