@@ -170,9 +170,38 @@ public class IntegerLinkedList {
    * Returns: nothing
    *
    */
-  // TODO: implement and test this method
+  public void doubleOddsRecursive() {
+    doubleOddsRecursiveHelper(head);
+  }
 
+  /*
+   *
+   * Purpose: recursively doubles IntegerNode n and every element following n
+   *          IF the IntegerNode data is odd
+   *
+   * Parameters: IntegerNode - n
+   *
+   * Returns: nothing
+   *
+   */
+  private void doubleOddsRecursiveHelper(IntegerNode n) {
+    if (n == null) {
+      return;
+    }
+    else {
+      // get data in current node
+      int val = n.getElement();
+      // check for odd numbers
+      if (val % 2 == 1) {
+        val *= 2;
+        // set element in current node
+        n.setElement(val);
+      }
 
+      // double the elements in the REST of the list
+      doubleOddsRecursiveHelper(n.next);
+    }
+  }
 
   /*
    *
