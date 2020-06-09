@@ -151,7 +151,7 @@ public class IntegerLinkedList {
     else {
       // get data in current node and double it
       int valDoubled = n.getElement() * 2;
-      // set element in current node to valPlusOne
+      // set element in current node
       n.setElement(valDoubled);
 
       // double the elements in the REST of the list
