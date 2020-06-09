@@ -15,6 +15,7 @@ public class Lab5Tester {
       testMultiplyValues();
       testDoubleAtOddPositions();
       testIsAscending();
+      testIsNegative();
     } catch (Exception e) {
       System.out.println("Your code threw an Exception.");
       System.out.println("Perhaps a stack trace will help:");
@@ -190,6 +191,37 @@ public class Lab5Tester {
 
     result = list5b.isAscending();
     displayResults(result == false, "testIsAscending - length5");
+  }
+
+  public static void testIsNegative() {
+    IntegerLinkedList emptyList = new IntegerLinkedList();
+    IntegerLinkedList list3a    = new IntegerLinkedList();
+    IntegerLinkedList list3b    = new IntegerLinkedList();
+    IntegerLinkedList list3c    = new IntegerLinkedList();
+
+    list3a.addFront(-2);
+    list3a.addFront(-1);
+    list3a.addFront(0);
+
+    list3b.addFront(-3);
+    list3b.addFront(-2);
+    list3b.addFront(-1);
+
+    list3c.addFront(-2);
+    list3c.addFront(4);
+    list3c.addFront(-5);
+
+    boolean result = emptyList.isNegative();
+    displayResults(result == true, "testIsNegative - empty");
+
+    result = list3a.isNegative();
+    displayResults(result == false, "testIsNegative - length3");
+
+    result = list3b.isNegative();
+    displayResults(result == true, "testIsNegative - length3");
+
+    result = list3c.isNegative();
+    displayResults(result == false, "testIsNegative - length3");
   }
 
   public static void displayResults(boolean passed, String testName) {
