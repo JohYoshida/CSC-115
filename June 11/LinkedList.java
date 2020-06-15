@@ -1,5 +1,5 @@
-public class LinkedList {
-  private Node head;
+public class LinkedList <T> {
+  private Node <T> head;
   private int size;
 
   public LinkedList() {
@@ -7,24 +7,24 @@ public class LinkedList {
     size = 0;
   }
 
-  /* Parameters: (int) i
+  /* Parameters: (T) i
    * Purpose:  add i to the front of the list
    * Returns:  nothing
    */
-  public void addFront(int i) {
-    Node n = new Node(i);
+  public void addFront(T i) {
+    Node n = new Node <T>(i);
 
     n.next = head;
     head   = n;
     size++;
   }
 
-  /* Parameters: (int) i
+  /* Parameters: (T) i
    * Purpose:  add i to the back of the list
    * Returns:  nothing
    */
-  public void addBack(int i) {
-    Node n = new Node(i);
+  public void addBack(T i) {
+    Node n = new Node <T>(i);
 
     if (head == null) {
       head = n;
@@ -49,11 +49,11 @@ public class LinkedList {
 
   /* Parameters: (int) position
    * Purpose:  get the data value at specified position in the list
-   * Returns:  (int) the data value
+   * Returns:  (T) the data value
    * Precondition: 0 <= position < list.size()
    */
-  public int get(int position) {
-    Node cur = head;
+  public T get(int position) {
+    Node <T> cur = head;
 
     for (int i = 0; i < position; i++) {
       cur = cur.next;
@@ -67,7 +67,8 @@ public class LinkedList {
    */
   public String toString() {
     String s = "list contents:";
-    Node cur = head;
+
+    Node <T> cur = head;
 
     while (cur != null) {
       s  += " " + cur.getData();

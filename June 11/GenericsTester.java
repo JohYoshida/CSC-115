@@ -1,6 +1,6 @@
 public class GenericsTester {
   public static void main(String[] args) {
-    LinkedList myList = new LinkedList();
+    LinkedList <Integer> myList = new LinkedList <Integer>();
 
     System.out.println("created and empty list:");
     System.out.println(myList);
@@ -26,5 +26,17 @@ public class GenericsTester {
     System.out.println("Accessed item at position 2:");
     System.out.println(result);
     System.out.println();
+
+    LinkedList <String> list2 = new LinkedList <String>();
+    System.out.println("create an empty list");
+    System.out.println(list2);
+    System.out.println();
+
+    list2.addFront("is");
+    list2.addFront("CSC115");
+    list2.addBack("the");
+    list2.addBack("best");
+
+    System.out.println(list2);
   }
 }

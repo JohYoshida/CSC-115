@@ -1,30 +1,30 @@
-public class Node {
-  private int data;
+public class Node <T> {
+  private T data;
   protected Node next;
 
   public Node() {
-    this.data = 0;
+    this.data = null;
     this.next = null;
   }
 
-  public Node(int value) {
-    this.data = value;
+  public Node(T data) {
+    this.data = data;
     this.next = null;
   }
 
   /* Parameters: nothing
    * Purpose:  get the data value of this Node
-   * Returns:  int - the value
+   * Returns:  T - the value
    */
-  public int getData() {
+  public T getData() {
     return data;
   }
 
-  /* Parameters: int data
+  /* Parameters: T data
    * Purpose:  set the data value of this Node to value
    * Returns:  nothing
    */
-  public void setData(int data) {
+  public void setData(T data) {
     this.data = data;
   }
 
