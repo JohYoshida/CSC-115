@@ -19,21 +19,21 @@ public class Lab6TesterPart2 {
   public static void testQueue() {
     System.out.println("testBasicQueue: start");
 
-    Queue q;
+    Queue <Integer> q;
     int subtestSize;
     boolean subtestResult;
 
-    q = new QueueRefBased();
+    q = new QueueRefBased <Integer>();
     displayResults(q.isEmpty(), "isEmpty on empty queue");
     displayResults(q.size() == 0, "size on empty queue");
 
-    q = new QueueRefBased();
+    q = new QueueRefBased <Integer>();
     q.enqueue(10);
     displayResults(!q.isEmpty(), "isEmpty - queue with one element");
     displayResults(q.size() == 1, "size - queue with one element");
 
 
-    q           = new QueueRefBased();
+    q           = new QueueRefBased <Integer>();
     subtestSize = 10;
     for (int i = 0; i < subtestSize; i++) {
       q.enqueue(i);
@@ -51,14 +51,14 @@ public class Lab6TesterPart2 {
     displayResults(q.size() == 0, "size - after dequeue");
 
 
-    q = new QueueRefBased();
+    q = new QueueRefBased <Integer>();
     q.enqueue(10);
     q.peek();
     displayResults(!q.isEmpty(), "enqueue/dequeue + isEmpty - queue with one elements");
     displayResults(q.size() == 1, "enqueue/dequeue + size - queue with one elements");
 
 
-    q           = new QueueRefBased();
+    q           = new QueueRefBased <Integer>();
     subtestSize = 10;
     for (int i = 0; i < subtestSize; i++) {
       q.enqueue(i);
@@ -75,7 +75,7 @@ public class Lab6TesterPart2 {
     displayResults(q.size() == subtestSize, "enqueue + peek + size");
 
 
-    q           = new QueueRefBased();
+    q           = new QueueRefBased <Integer>();
     subtestSize = 10;
     for (int i = 0; i < subtestSize; i++) {
       q.enqueue(i);
@@ -83,7 +83,7 @@ public class Lab6TesterPart2 {
     q.makeEmpty();
     displayResults(q.isEmpty(), "makeEmpty + isEmpty - queue with multiple elements");
 
-    q           = new QueueRefBased();
+    q           = new QueueRefBased <Integer>();
     subtestSize = 10;
     for (int i = 0; i < subtestSize; i++) {
       q.enqueue(i);
@@ -96,7 +96,7 @@ public class Lab6TesterPart2 {
     displayResults(q.size() == subtestSize, "makeEmpty + enqueue + size - queue with multiple elements");
 
 
-    q           = new QueueRefBased();
+    q           = new QueueRefBased <Integer>();
     subtestSize = 10;
     for (int i = 0; i < subtestSize; i++) {
       q.enqueue(i);
@@ -111,24 +111,24 @@ public class Lab6TesterPart2 {
 
 
     //Testing generic queue with Character type
-//        QueueRefBased<Character> charQ;
-//
-//        charQ = new QueueRefBased<Character>();
-//        subtestSize = 10;
-//        for (int i = 0; i < subtestSize; i++) {
-//            charQ.enqueue((char)(i+'0'));
-//        }
-//
-//        subtestResult = true;
-//        for (int i = 0; i < subtestSize; i++) {
-//            char ii = charQ.dequeue();
-//            subtestResult = subtestResult && (ii == (char)(i+'0'));
-//        }
-//        displayResults(subtestResult, "dequeue - queue with multiple elements");
-//
-//
-//        System.out.println("testing Queue: end");
-//        System.out.println();
+    QueueRefBased <Character> charQ;
+
+    charQ       = new QueueRefBased <Character>();
+    subtestSize = 10;
+    for (int i = 0; i < subtestSize; i++) {
+      charQ.enqueue((char)(i + '0'));
+    }
+
+    subtestResult = true;
+    for (int i = 0; i < subtestSize; i++) {
+      char ii = charQ.dequeue();
+      subtestResult = subtestResult && (ii == (char)(i + '0'));
+    }
+    displayResults(subtestResult, "dequeue - queue with multiple elements");
+
+
+    System.out.println("testing Queue: end");
+    System.out.println();
   }
 
   public static void displayResults(boolean passed, String testName) {

@@ -1,4 +1,4 @@
-public interface Queue {
+public interface Queue <T> {
   /*
    * Purpose:
    *   return the number of items currently pushed onto the queue.
@@ -50,7 +50,7 @@ public interface Queue {
    * If q is {}:
    *   then after enqueue(a), q is {a}.
    */
-  void enqueue(int element);
+  void enqueue(T element);
 
 
   /*
@@ -60,7 +60,7 @@ public interface Queue {
    *   the call, then an exception is thrown by the method.
    *
    * Returns:
-   *   The value of type int at the front of the queue (if queue is
+   *   The value of type T at the front of the queue (if queue is
    *   non-empty)
    *
    * Precondition:
@@ -72,7 +72,7 @@ public interface Queue {
    *    then after q.dequeue(), q is {y, z} and x is returned to the
    *    caller.
    */
-  int dequeue();
+  T dequeue();
 
 
 
@@ -84,7 +84,7 @@ public interface Queue {
    *   by the method.
    *
    * Returns:
-   *   The value of type int at the front of the queue (if queue is
+   *   The value of type T at the front of the queue (if queue is
    *   non-empty)
    *
    * Precondition:
@@ -96,7 +96,7 @@ public interface Queue {
    *    then after q.peek(), q is {x, y, z} and x is returned to the
    *    caller.
    */
-  int peek();
+  T peek();
 
 
   /*
