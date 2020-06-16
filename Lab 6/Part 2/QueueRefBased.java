@@ -3,9 +3,9 @@
  * V00798535
  */
 
-public class QueueRefBased implements Queue {
-  private QueueNode front;
-  private QueueNode back;
+public class QueueRefBased <T> implements Queue <T> {
+  private QueueNode <T> front;
+  private QueueNode <T> back;
 
   public QueueRefBased() {
     front = null;
@@ -13,34 +13,52 @@ public class QueueRefBased implements Queue {
   }
 
   public int size() {
-    int count = 0;
+    int count      = 0;
+    QueueNode temp = front;
 
-    // TODO: complete
+    while (temp != null) {
+      count++;
+      temp = temp.next;
+    }
     return count;
   }
 
   public boolean isEmpty() {
-    // TODO: complete
-    return true;
+    if (front == null) {
+      return true;
+    }
+    return false;
   }
 
-  public void enqueue(int element) {
-    // TODO: complete
+  public void enqueue(T element) {
+    QueueNode <T> node = new QueueNode <T>(element);
+    if (front == null) {
+      front = node;
+      back  = node;
+    }
+    else {
+      back.next = node;
+      back      = node;
+    }
   }
 
-  public int dequeue() {
-    // TODO: complete
-
-    return 0;
+  public T dequeue() {
+    if (front == null) {
+      return front.getValue();
+    }
+    else {
+      T val = front.getValue();
+      front = front.next;
+      return val;
+    }
   }
 
-  public int peek() {
-    // TODO: complete
-
-    return 0;
+  public T peek() {
+    return front.getValue();
   }
 
   public void makeEmpty() {
-    // TODO: complete
+    front = null;
+    back  = null;
   }
 }
