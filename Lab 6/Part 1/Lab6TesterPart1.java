@@ -180,8 +180,23 @@ public class Lab6TesterPart1 {
     //  if you encounter a ')', pop an element off the stack
     //  When can you return true?  When should you return false.
     // Tip: take time to work out an example on paper
+    Stack s = new StackArrayBased();
 
-    return true;
+    for (int i = 0; i < str.length(); i++) {
+      if (str.charAt(i) == '(') {
+        s.push('(');
+      }
+      else if (str.charAt(i) == ')') {
+        if (s.size() == 0) {
+          return false;
+        }
+        s.pop();
+      }
+    }
+    if (s.size() == 0) {
+      return true;
+    }
+    return false;
   }
 
   public static void displayResults(boolean passed, String testName) {
