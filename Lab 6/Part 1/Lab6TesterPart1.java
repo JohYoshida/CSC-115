@@ -151,7 +151,6 @@ public class Lab6TesterPart1 {
    * Returns: String - the reversed result String
    */
   public static String reverseString(String str) {
-    // TODO: complete this function
     // Your solution MUST use a Stack.
     Stack s = new StackArrayBased();
 
@@ -173,7 +172,6 @@ public class Lab6TesterPart1 {
    * Returns: boolean - true if brackets are matched, false otherwise
    */
   public static boolean doBracketsMatch(String str) {
-    // TODO: complete this function
     // Your solution MUST use a Stack.
     // As you traverse the string,
     //  if you encounter a '(', push it on the stack
