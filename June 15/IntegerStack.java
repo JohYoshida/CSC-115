@@ -11,7 +11,15 @@ public class IntegerStack {
    * Returns: Nothing
    */
   public void push(int v) {
-    // TODO: implement this
+    Node n = new Node(v);
+
+    if (isEmpty()) {
+      head = n;
+    }
+    else {
+      n.next = head;
+      head   = n;
+    }
   }
 
   /*
@@ -20,8 +28,12 @@ public class IntegerStack {
    * Returns: (int) - the data value of the element removed
    */
   public int pop() {
-    // TODO: implement this
-    return 0;             // so it compiles
+    if (isEmpty()) {
+      return -1;
+    }
+    int val = head.getData();
+    head = head.next;
+    return val;
   }
 
   /*
@@ -30,8 +42,10 @@ public class IntegerStack {
    * Returns: (boolean) - true if the stack is empty, false otherwise
    */
   public boolean isEmpty() {
-    // TODO: implement this
-    return false;             // so it compiles
+    if (head == null) {
+      return true;
+    }
+    return false;
   }
 
   /*
@@ -40,7 +54,9 @@ public class IntegerStack {
    * Returns: (int) - the data value of the top element
    */
   public int top() {
-    // TODO: implement this
-    return 0;             // so it compiles
+    if (isEmpty()) {
+      return -1;
+    }
+    return head.getData();
   }
 }

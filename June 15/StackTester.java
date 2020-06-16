@@ -21,7 +21,33 @@ public class StackTester {
     result = myStack.pop();
     displayResults(result == 2, "pop test1");
 
-    // TODO: Add more tests
+    result = myStack.top();
+    displayResults(result == 7, "top after pop");
+    displayResults(myStack.isEmpty() == false, "isEmpty after pop");
+
+    myStack.push(9);
+    result = myStack.top();
+    displayResults(result == 9, "top test3");
+
+    result = myStack.pop();
+    displayResults(result == 9, "pop test2");
+    result = myStack.top();
+    displayResults(result == 7, "top test4");
+
+    result = myStack.pop();
+    displayResults(result == 7, "pop test3");
+    result = myStack.top();
+    displayResults(result == 4, "top test5");
+    displayResults(myStack.isEmpty() == false, "isEmpty test3");
+
+    result = myStack.pop();
+    displayResults(result == 4, "pop test4");
+    result = myStack.top();
+    displayResults(result == -1, "top test6");
+    displayResults(myStack.isEmpty() == true, "isEmpty test3");
+
+    result = myStack.pop();
+    displayResults(result == -1, "pop test5");
 
 
     System.out.println("Passed " + testPassCount + "/" + testCount + " tests");
