@@ -153,7 +153,15 @@ public class Lab6TesterPart1 {
   public static String reverseString(String str) {
     // TODO: complete this function
     // Your solution MUST use a Stack.
+    Stack s = new StackArrayBased();
+
+    for (int i = 0; i < str.length(); i++) {
+      s.push(str.charAt(i));
+    }
     String result = "";
+    for (int i = 0; i < str.length(); i++) {
+      result += s.pop();
+    }
 
     return result;
   }
