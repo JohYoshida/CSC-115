@@ -50,8 +50,37 @@ public class A4Tester {
     displayResults(result == 9, "correct value returned from top");
 
     // Add tests for defaultSizeStack, when should it be full?
-
     System.out.println();
+
+    displayResults(defaultSizeStack.isEmpty(), "stack initially empty");
+    displayResults(!defaultSizeStack.isFull(), "empty stack is not full");
+
+    defaultSizeStack.push(1);
+    result = defaultSizeStack.top();
+    displayResults(!defaultSizeStack.isEmpty(), "stack no longer empty");
+    displayResults(!defaultSizeStack.isFull(), "stack still not full");
+    displayResults(result == 1, "top works after initial push");
+    defaultSizeStack.push(2);
+    defaultSizeStack.push(3);
+    defaultSizeStack.push(4);
+    defaultSizeStack.push(5);
+    result = defaultSizeStack.top();
+    displayResults(!defaultSizeStack.isEmpty(), "stack not empty");
+    displayResults(defaultSizeStack.isFull(), "stack is full");
+    displayResults(result == 5, "top works when full push");
+
+    defaultSizeStack.popAll();
+    displayResults(defaultSizeStack.isEmpty(), "stack is now empty");
+    displayResults(!defaultSizeStack.isFull(), "stack is no longer full");
+    defaultSizeStack.push(6);
+    defaultSizeStack.push(7);
+    defaultSizeStack.push(8);
+    defaultSizeStack.push(9);
+    defaultSizeStack.push(10);
+    result = defaultSizeStack.top();
+    displayResults(!defaultSizeStack.isEmpty(), "stack not empty");
+    displayResults(defaultSizeStack.isFull(), "stack is full");
+    displayResults(result == 10, "top works when full after popAll");
   }
 
   public static void testStackIsGeneric() {
