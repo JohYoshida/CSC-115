@@ -1,3 +1,7 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
 public class A4Stack <T> implements Stack <T> {
   private static final int DEFAULT_CAPACITY = 5;
   private T[] data;
