@@ -17,35 +17,47 @@ public class A4Stack <T> implements Stack <T> {
     top  = 0;
   }
 
-  public void push(T v) {
-    // TODO: implement this
+  public void push(T v) throws FullStackException {
+    if (isFull()) {
+      throw new FullStackException("Stack is already full!");
+    }
+    data[top] = v;
+    top++;
   }
 
-  public T pop() {
-    // TODO: implement this
-
-    return null;             // so it compiles
+  public T pop() throws EmptyStackException {
+    if (isEmpty()) {
+      throw new EmptyStackException("Stack is empty!");
+    }
+    T val = top();
+    top--;
+    data[top] = null;
+    return val;
   }
 
   public void popAll() {
-    // TODO: implement this
+    data = data = (T[])new Object[DEFAULT_CAPACITY];
+    top  = 0;
   }
 
   public boolean isEmpty() {
-    // TODO: implement this
-
-    return false;             // so it compiles
+    if (top == 0) {
+      return true;
+    }
+    return false;
   }
 
   public boolean isFull() {
-    // TODO: implement this
-
+    if (data.length == top) {
+      return true;
+    }
     return false;             // so it compiles
   }
 
-  public T top() {
-    // TODO: implement this
-
-    return null;             // so it compiles
+  public T top() throws EmptyStackException {
+    if (isEmpty()) {
+      throw new EmptyStackException();
+    }
+    return data[top - 1];
   }
 }
