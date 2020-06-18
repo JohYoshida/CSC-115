@@ -22,14 +22,19 @@ public class ListTester {
     System.out.println();
 
     int result;
-    result = myList.get(2);
-    System.out.println("Accessed item at position 2:");
-    System.out.println(result);
-    System.out.println();
 
-    result = myList.get(3);
-    System.out.println("Accessed item at position 4:");
-    System.out.println(result);
-    System.out.println();
+    try {
+      result = myList.get(2);
+      System.out.println("Accessed item at position 2:");
+      System.out.println(result);
+      System.out.println();
+
+      result = myList.get(3);
+      System.out.println("Accessed item at position 4:");
+      System.out.println(result);
+      System.out.println();
+    } catch (OffListException e) {
+      System.out.println(e);
+    }
   }
 }

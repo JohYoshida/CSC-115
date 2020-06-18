@@ -48,9 +48,11 @@ public class LinkedList <T> {
   /* Parameters: (int) position
    * Purpose:  get the data value at specified position in the list
    * Returns:  (int) the data value
-   * Precondition: 0 <= position < list.size()
    */
-  public T get(int position) {
+  public T get(int position) throws OffListException {
+    if (position >= size || position < 0) {
+      throw new OffListException("Position: " + position + " is invalid for a list of size " + size);
+    }
     Node <T> cur = head;
     for (int i = 0; i < position; i++) {
       cur = cur.next;
