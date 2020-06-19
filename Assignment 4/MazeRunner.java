@@ -43,9 +43,63 @@ public class MazeRunner {
     mazeToSolve.setChar(row, col, 'o');
     System.out.println("\n" + mazeToSolve.toString());
 
-    // TODO Implement this method so it solves the maze!
+    // Check victory condition
+    if (path.top().equals(finish)) {
+      System.out.println("Victory!");
+      return true;
+    }
+    // Check above
+    if (row != 0) {
+      if (mazeToSolve.getChar(row - 1, col) == ' ') {
+        System.out.println("Found a path UP, pushing position (" + (row - 1)
+                           + ", " + col + ") onto stack");
+        MazeLocation next = new MazeLocation(row - 1, col);
+        path.push(next);
+        return findPath(next, finish);
+      }
+    }
+    // Check left
+    if (col != 0) {
+      if (mazeToSolve.getChar(row, col - 1) == ' ') {
+        System.out.println("Found a path LEFT, pushing position (" + row
+                           + ", " + (col - 1) + ") onto stack");
+        MazeLocation next = new MazeLocation(row, col - 1);
+        path.push(next);
+        return findPath(next, finish);
+      }
+    }
+    // Check below
+    if (row + 1 != mazeToSolve.getRows()) {
+      if (mazeToSolve.getChar(row + 1, col) == ' ') {
+        System.out.println("Found a path DOWN, pushing position (" + (row + 1)
+                           + ", " + col + ") onto stack");
+        MazeLocation next = new MazeLocation(row + 1, col);
+        path.push(next);
+        return findPath(next, finish);
+      }
+    }
+    // Check right
+    if (col + 1 != mazeToSolve.getCols()) {
+      if (mazeToSolve.getChar(row, col + 1) == ' ') {
+        System.out.println("Found a path RIGHT, pushing position (" + row
+                           + ", " + (col + 1) + ") onto stack");
+        MazeLocation next = new MazeLocation(row, col + 1);
+        path.push(next);
+        return findPath(next, finish);
+      }
+    }
 
-    return false;             // so it compiles
+    // Backtrack
+    System.out.println("No path found, need to backtrack. Popping: "
+                       + path.top());
+    mazeToSolve.setChar(row, col, 'x');
+    path.pop();
+    // Check failure condition
+    if (path.isEmpty()) {
+      System.out.println("Impossible!");
+      return false;
+    }
+    return findPath(path.top(), finish);
   }
 
   /*
