@@ -51,7 +51,7 @@ public class A4Stack <T> implements Stack <T> {
     if (data.length == top) {
       return true;
     }
-    return false;             // so it compiles
+    return false;
   }
 
   public T top() throws EmptyStackException {
