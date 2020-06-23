@@ -192,7 +192,19 @@ public class Lab7Part2Tester {
     //            // we should get here - test passes
     //            displayResults(true, "exception thrown when it should be");
     //        }
-
+    s = new StackArrayBased();
+    try {
+      s.peek();
+      displayResults(false, "exception thrown when it should not be");
+    } catch (StackEmptyException see) {
+      displayResults(true, "exception thrown when it should be");
+    }
+    try {
+      s.pop();
+      displayResults(false, "exception thrown when it should not be");
+    } catch (StackEmptyException see) {
+      displayResults(true, "exception thrown when it should be");
+    }
 
     System.out.println("testBasicStack: end");
     System.out.println();
