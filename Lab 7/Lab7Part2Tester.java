@@ -8,7 +8,7 @@ public class Lab7Part2Tester {
   public static void main(String[] args) {
     try {
       testBasicStack();
-//            testStackUseFunctions();
+      testStackUseFunctions();
     } catch (Exception e) {
       System.out.println("Your code threw an Exception.");
       System.out.println("Perhaps a stack trace will help:");
@@ -30,15 +30,21 @@ public class Lab7Part2Tester {
   public static String reverseString(String str) {
     String result = "";
 
-    // Stack stk = new StackArrayBased();
-    // for(int i=0; i<str.length(); i++)
-    //     stk.push(str.charAt(i));
-    //
-    //
-    //
-    // while (!stk.isEmpty()) {
-    //     result +=stk.pop();
-    // }
+    Stack stk = new StackArrayBased();
+
+    for (int i = 0; i < str.length(); i++) {
+      stk.push(str.charAt(i));
+    }
+
+
+    try {
+      while (!stk.isEmpty()) {
+        result += stk.pop();
+      }
+    }
+    catch (StackEmptyException see) {
+      System.out.println("caught on pop in reverseString: " + see);
+    }
 
     return result;
   }
@@ -50,20 +56,29 @@ public class Lab7Part2Tester {
    * Returns: boolean - true if brackets are matched, false otherwise
    */
   public static boolean doBracketsMatch(String str) {
-    // Stack stk = new StackArrayBased();
-    // char c = ' ';
-    // char popped = ' ';
-    // for(int i=0; i<str.length(); i++) {
-    //     c = str.charAt(i);
-    //     if (c == '(') {
-    //         stk.push(c);
-    //     } else if (c == ')') {
-    //         if (stk.isEmpty())
-    //             return false;
-    //         else
-    //             popped = stk.pop();
-    //     }
-    // }
+    Stack stk   = new StackArrayBased();
+    char c      = ' ';
+    char popped = ' ';
+
+    for (int i = 0; i < str.length(); i++) {
+      c = str.charAt(i);
+      if (c == '(') {
+        stk.push(c);
+      }
+      else if (c == ')') {
+        if (stk.isEmpty()) {
+          return false;
+        }
+        else {
+          try {
+            popped = stk.pop();
+          }
+          catch (StackEmptyException see) {
+            System.out.println("caught on pop in doBracketsMatch: " + see);
+          }
+        }
+      }
+    }
 
     return true;
   }
@@ -211,6 +226,7 @@ public class Lab7Part2Tester {
   }
 
   public static void testStackUseFunctions() {
+    System.out.println("testStackUseFunctions: start");
     String resultString;
     String expected;
 
@@ -237,6 +253,8 @@ public class Lab7Part2Tester {
 
     matched = doBracketsMatch("k(lmn)ab)");
     displayResults(!matched, "doBracketsMatch \"k(lmn)ab)\"");
+
+    System.out.println("testStackUseFunctions: end");
   }
 
   public static void displayResults(boolean passed, String testName) {
