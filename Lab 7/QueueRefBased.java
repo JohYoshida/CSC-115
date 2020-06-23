@@ -1,3 +1,7 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
 public class QueueRefBased <T> implements Queue <T> {
   private QueueNode <T> front;
   private QueueNode <T> back;
