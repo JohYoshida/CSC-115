@@ -40,20 +40,30 @@ public class Lab7Part3Tester {
     displayResults(!q.isEmpty(), "isEmpty - queue with multiple elements");
     displayResults(q.size() == subtestSize, "size - queue with multiple elements");
 
-    subtestResult = true;
-    for (int i = 0; i < subtestSize; i++) {
-      int ii = q.dequeue();
-      subtestResult = subtestResult && (ii == i);
+    try {
+      subtestResult = true;
+      for (int i = 0; i < subtestSize; i++) {
+        int ii = q.dequeue();
+        subtestResult = subtestResult && (ii == i);
+      }
+      displayResults(subtestResult, "dequeue - queue with multiple elements");
+      displayResults(q.isEmpty(), "isEmpty - after dequeue");
+      displayResults(q.size() == 0, "size - after dequeue");
     }
-    displayResults(subtestResult, "dequeue - queue with multiple elements");
-    displayResults(q.isEmpty(), "isEmpty - after dequeue");
-    displayResults(q.size() == 0, "size - after dequeue");
+    catch (QueueEmptyException qee) {
+      displayResults(false, "exception thrown when it shouldn't be");
+    }
 
 
 
     q = new QueueRefBased <Integer>();
     q.enqueue(10);
-    q.peek();
+    try {
+      q.peek();
+    }
+    catch (QueueEmptyException qee) {
+      displayResults(false, "exception thrown when it shouldn't be");
+    }
     displayResults(!q.isEmpty(), "enqueue/dequeue + isEmpty - queue with one elements");
     displayResults(q.size() == 1, "enqueue/dequeue + size - queue with one elements");
 
@@ -67,13 +77,18 @@ public class Lab7Part3Tester {
     displayResults(!q.isEmpty(), "enqueue + isEmpty");
     displayResults(q.size() == subtestSize, "enqueue + size");
     subtestResult = true;
-    for (int i = 0; i < subtestSize; i++) {
-      int ii = q.peek();
-      subtestResult = subtestResult && (ii == 0);
+    try {
+      for (int i = 0; i < subtestSize; i++) {
+        int ii = q.peek();
+        subtestResult = subtestResult && (ii == 0);
+      }
+      displayResults(subtestResult, "enqueue + peek");
+      displayResults(!q.isEmpty(), "enqueue + peek + isEmpty");
+      displayResults(q.size() == subtestSize, "enqueue + peek + size");
     }
-    displayResults(subtestResult, "enqueue + peek");
-    displayResults(!q.isEmpty(), "enqueue + peek + isEmpty");
-    displayResults(q.size() == subtestSize, "enqueue + peek + size");
+    catch (QueueEmptyException qee) {
+      displayResults(false, "exception thrown when it shouldn't be");
+    }
 
 
     q           = new QueueRefBased <Integer>();
@@ -106,9 +121,14 @@ public class Lab7Part3Tester {
     for (int i = 0; i < subtestSize; i++) {
       q.enqueue(i);
     }
-    displayResults(q.peek() == 0, "makeEmpty + enqueue + peek - queue with multiple elements");
-    q.dequeue();
-    displayResults(q.peek() == 1, "makeEmpty + enqueue + dequeue + peek - queue with multiple elements");
+    try {
+      displayResults(q.peek() == 0, "makeEmpty + enqueue + peek - queue with multiple elements");
+      q.dequeue();
+      displayResults(q.peek() == 1, "makeEmpty + enqueue + dequeue + peek - queue with multiple elements");
+    }
+    catch (QueueEmptyException qee) {
+      displayResults(false, "exception thrown when it shouldn't be");
+    }
 
     // TODO: Write code to test that exception is thrown when it should be
     // For example:
@@ -120,6 +140,21 @@ public class Lab7Part3Tester {
     //            // we should get here - test passes
     //            displayResults(true, "exception thrown when it should be");
     //        }
+    q = new QueueRefBased <Integer>();
+    try {
+      q.dequeue();
+      displayResults(false, "exception thrown when it should not be");
+    }
+    catch (QueueEmptyException qee) {
+      displayResults(true, "exception thrown when it should be");
+    }
+    try {
+      q.peek();
+      displayResults(false, "exception thrown when it should not be");
+    }
+    catch (QueueEmptyException qee) {
+      displayResults(true, "exception thrown when it should be");
+    }
 
     System.out.println("testing Queue: end");
     System.out.println();
