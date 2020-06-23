@@ -30,13 +30,14 @@ public class Exercise2 {
     System.out.println("main end");
   }
 
-  public static void foo(int x) throws AException {
+  public static void foo(int x) throws AException, BException {
     System.out.println("start foo");
 
     if (x % 2 == 0) {
       System.out.println("foo throws");
       throw new AException();
     }
+
 
     // TODO 3:
     //  - add a call here to bar, passing it the value of x
@@ -47,7 +48,13 @@ public class Exercise2 {
     //      - in catch block print: "caught in foo: " + the exception
     //  - Trace the updated program on paper
     //  - compile and run the program - does it match your expected output?
-
+    bar(x);
+    // try {
+    //   System.out.println("calling bar");
+    //   System.out.println("done calling bar");
+    // } catch (BException e) {
+    //   System.out.println("caught in bar: " + e);
+    // }
 
     // TODO 4:
     //  - remove the try/catch block wrapped around the call to bar
@@ -70,4 +77,12 @@ public class Exercise2 {
   //  In between print statements, if y is divisible by 3
   //      bar should print a message that it is throwing an exception
   //      and then throw a BException
+  public static void bar(int y) throws BException {
+    System.out.println("start bar");
+    if (y % 3 == 0) {
+      System.out.println("bar throws");
+      throw new BException();
+    }
+    System.out.println("end bar");
+  }
 }

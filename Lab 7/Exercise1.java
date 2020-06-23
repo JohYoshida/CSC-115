@@ -5,15 +5,15 @@ public class Exercise1 {
     // TODO 0: uncomment the following 2 lines of code
     //  Trace on paper to determine the output before you run it
     //  Your TA will want to see your trace.
-//        foo();
-//        System.out.println("in main after foo");
+    // foo();
+    // System.out.println("in main after foo");
 
     // TODO 1: recomment out the 2 lines of code above and
     //         uncomment the following 2 lines of code
     //  Trace on paper to determine the output before you run it
     //  Your TA will want to see your trace.
-//        bar();
-//        System.out.println("in main after bar");
+    bar();
+    System.out.println("in main after bar");
 
     // TODO 2: on your paper, answer the following 2 questions.
     //  Is ArrayIndexOutOfBoundsException a checked or unchecked exception?
