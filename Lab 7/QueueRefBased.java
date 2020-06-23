@@ -35,7 +35,10 @@ public class QueueRefBased <T> implements Queue <T> {
     }
   }
 
-  public T dequeue() {
+  public T dequeue() throws QueueEmptyException {
+    if (size() == 0) {
+      throw new QueueEmptyException("thrown within dequeue()");
+    }
     T val = front.getValue();
 
     front = front.next;
@@ -46,7 +49,10 @@ public class QueueRefBased <T> implements Queue <T> {
     return val;
   }
 
-  public T peek() {
+  public T peek() throws QueueEmptyException {
+    if (size() == 0) {
+      throw new QueueEmptyException("thrown within peek()");
+    }
     T val = front.getValue();
 
     return val;
