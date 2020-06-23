@@ -63,16 +63,15 @@ public interface Queue <T> {
    *   The value of type T at the front of the queue (if queue is
    *   non-empty)
    *
-   * Precondition:
-   *   q is not empty
-   *
    * Examples:
    *
    * If q is {x, y, z}:
    *    then after q.dequeue(), q is {y, z} and x is returned to the
    *    caller.
+   * If q is empty:
+   *    then a QueueEmptyException() is thrown.
    */
-  T dequeue();
+  T dequeue() throws QueueEmptyException;
 
 
 
@@ -87,16 +86,15 @@ public interface Queue <T> {
    *   The value of type T at the front of the queue (if queue is
    *   non-empty)
    *
-   * Precondition:
-   *   q is not empty
-   *
    * Examples:
    *
    * If q is {x, y, z}:
    *    then after q.peek(), q is {x, y, z} and x is returned to the
    *    caller.
+   * If q is empty:
+   *    then a QueueEmptyException() is thrown.
    */
-  T peek();
+  T peek() throws QueueEmptyException;
 
 
   /*
