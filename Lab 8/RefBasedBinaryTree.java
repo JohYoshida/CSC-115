@@ -60,8 +60,16 @@ public class RefBasedBinaryTree implements BinaryTree {
    * Returns: int - the height
    */
   private int height(TreeNode t) {
-    // TODO...
-    return 0;
+    if (t == null) {
+      return 0;
+    }
+    // check left and right height
+    if (height(t.getLeft()) > height(t.getRight())) {
+      return height(t.getLeft()) + 1;
+    }
+    else {
+      return height(t.getRight()) + 1;
+    }
   }
 
   public void inOrder() {
