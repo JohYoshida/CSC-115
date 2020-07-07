@@ -89,7 +89,19 @@ public class ArrayBasedBinaryTree {
 
   public String toString() {
     // TODO...
-    return "";
+    return toStringRecursive(root);
+  }
+
+  private String toStringRecursive(int t) {
+    String str = "";
+
+    if (data[t] == null) {
+      return "";
+    }
+    str += toStringRecursive(getLeft(t));
+    str += data[t] + " ";
+    str += toStringRecursive(getRight(t));
+    return str;
   }
 
   public static void main(String[] args) {
