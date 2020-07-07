@@ -10,7 +10,9 @@ public class ArrayBasedBinaryTree {
   protected int size;
 
   public ArrayBasedBinaryTree() {
-    // TODO...
+    data = new Integer[CAPACITY];
+    root = 0;
+    size = 0;
   }
 
   /*
