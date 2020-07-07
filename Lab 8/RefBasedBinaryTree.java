@@ -73,7 +73,17 @@ public class RefBasedBinaryTree implements BinaryTree {
   }
 
   public void inOrder() {
-    // TODO...
+    inOrderRecursive(root);
+    System.out.println();
+  }
+
+  private void inOrderRecursive(TreeNode t) {
+    if (t == null) {
+      return;
+    }
+    inOrderRecursive(t.getLeft());
+    System.out.print(t.data + " ");
+    inOrderRecursive(t.getRight());
   }
 
   public void preOrder() {
