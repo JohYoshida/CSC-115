@@ -33,8 +33,7 @@ public class ArrayBasedBinaryTree {
    * Returns: int - index of left child
    */
   protected int getLeft(int t) {
-    // TODO...
-    return 0;
+    return 2 * t + 1;
   }
 
   /*
@@ -43,8 +42,7 @@ public class ArrayBasedBinaryTree {
    * Returns: int - index of right child
    */
   protected int getRight(int t) {
-    // TODO...
-    return 0;
+    return 2 * t + 2;
   }
 
   public void inOrder() {
