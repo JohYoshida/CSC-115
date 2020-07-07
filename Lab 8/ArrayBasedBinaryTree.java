@@ -60,11 +60,31 @@ public class ArrayBasedBinaryTree {
   }
 
   public void preOrder() {
-    // TODO...
+    preOrderRecursive(root);
+    System.out.println();
+  }
+
+  private void preOrderRecursive(int t) {
+    if (data[t] == null || t >= CAPACITY) {
+      return;
+    }
+    System.out.print(data[t] + " ");
+    preOrderRecursive(getLeft(t));
+    preOrderRecursive(getRight(t));
   }
 
   public void postOrder() {
-    // TODO...
+    postOrderRecursive(root);
+    System.out.println();
+  }
+
+  private void postOrderRecursive(int t) {
+    if (data[t] == null || t >= CAPACITY) {
+      return;
+    }
+    postOrderRecursive(getLeft(t));
+    postOrderRecursive(getRight(t));
+    System.out.print(data[t] + " ");
   }
 
   public String toString() {
