@@ -115,8 +115,19 @@ public class RefBasedBinaryTree implements BinaryTree {
   }
 
   public String toString() {
-    // TODO...
-    return "";
+    return toStringRecursive(root);
+  }
+
+  private String toStringRecursive(TreeNode t) {
+    String str = "";
+
+    if (t == null) {
+      return "";
+    }
+    str += toStringRecursive(t.getLeft());
+    str += t.data + " ";
+    str += toStringRecursive(t.getRight());
+    return str;
   }
 
   // provided for testing of RefBasedBinaryTree class
