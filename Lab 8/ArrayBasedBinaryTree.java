@@ -46,7 +46,17 @@ public class ArrayBasedBinaryTree {
   }
 
   public void inOrder() {
-    // TODO...
+    inOrderRecursive(root);
+    System.out.println();
+  }
+
+  private void inOrderRecursive(int t) {
+    if (data[t] == null || t >= CAPACITY) {
+      return;
+    }
+    inOrderRecursive(getLeft(t));
+    System.out.print(data[t] + " ");
+    inOrderRecursive(getRight(t));
   }
 
   public void preOrder() {
