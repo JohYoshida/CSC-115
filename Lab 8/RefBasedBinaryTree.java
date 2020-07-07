@@ -1,3 +1,8 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
+
 import java.lang.Math;
 
 /*
