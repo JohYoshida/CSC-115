@@ -23,7 +23,8 @@ public class ArrayBasedBinaryTree {
    * Returns: nothing
    */
   public void insert(Integer value) {
-    // TODO...
+    data[size] = value;
+    size++;
   }
 
   /*
