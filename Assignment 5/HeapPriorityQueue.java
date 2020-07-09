@@ -39,6 +39,34 @@ public class HeapPriorityQueue implements PriorityQueue {
     storage     = new Comparable[size];
     currentSize = 0;
   }
+
+  // TODO: remove this before hand in
+  private void report() {
+    if (currentSize > 0) {
+      for (int i = 1; i < storage.length; i++) {
+        if (storage[i] != null) {
+          System.out.print(storage[i] + " ");
+        }
+      }
+      System.out.println();
+    }
+  }
+
+  // TODO: remove this before hand in
+  private void report(Comparable latest) {
+    if (currentSize > 0) {
+      for (int i = 1; i < storage.length; i++) {
+        if (storage[i] != null) {
+          if (storage[i] == latest) {
+            System.out.print("!" + storage[i] + "! ");
+          }
+          else {
+            System.out.print(storage[i] + " ");
+          }
+        }
+      }
+      System.out.println();
+    }
   }
 
   public void insert(Comparable element) {
