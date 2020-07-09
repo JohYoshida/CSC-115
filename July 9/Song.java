@@ -22,6 +22,7 @@ public class Song implements Comparable <Song> {
   }
 
   public String getTitle() {
+    return title;
   }
 
   public void setTitle(String title) {
