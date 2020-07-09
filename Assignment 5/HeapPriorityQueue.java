@@ -36,7 +36,9 @@ public class HeapPriorityQueue implements PriorityQueue {
    * Constructor that initializes the array to hold size elements
    */
   public HeapPriorityQueue(int size) {
-    //TODO: Implement this
+    storage     = new Comparable[size];
+    currentSize = 0;
+  }
   }
 
   public void insert(Comparable element) {
