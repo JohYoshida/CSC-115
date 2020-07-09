@@ -1,4 +1,9 @@
 /*
+ * Joh Yoshida
+ * V00798535
+ */
+
+/*
  * represents a transit boarding gate (train, airplane, etc.)
  */
 

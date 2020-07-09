@@ -1,4 +1,9 @@
 /*
+ * Joh Yoshida
+ * V00798535
+ */
+
+/*
  * HeapPriorityQueue.java
  *
  * An implementation of a minimum PriorityQueue using a heap.

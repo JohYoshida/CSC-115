@@ -1,4 +1,9 @@
 /*
+ * Joh Yoshida
+ * V00798535
+ */
+
+/*
  * represents an airline passenger
  *
  * we have implemented some methods and constructors.
