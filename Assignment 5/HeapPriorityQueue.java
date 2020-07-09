@@ -82,9 +82,6 @@ public class HeapPriorityQueue implements PriorityQueue {
     }
   }
 
-  public Comparable removeMin() {
-    //TODO: Implement this
-    return null;             // so it compiles
   private void insertRecursive(int current) {
     if (current <= 1) {
       return;
@@ -99,6 +96,10 @@ public class HeapPriorityQueue implements PriorityQueue {
       }
     }
   }
+
+  public Comparable removeMin() {
+    //TODO: Implement this
+    return null;             // so it compiles
   }
 
   public boolean isEmpty() {
