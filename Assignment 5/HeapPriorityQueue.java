@@ -66,9 +66,60 @@ public class HeapPriorityQueue implements PriorityQueue {
     }
   }
 
-  public Comparable removeMin() {
-    //TODO: Implement this
-    return null;             // so it compiles
+  public Comparable removeMin() throws HeapEmptyException {
+    if (isEmpty()) {
+      throw new HeapEmptyException();
+    }
+    else {
+      // replace root with rightmost leaf
+      Comparable element = storage[1];
+      storage[1]           = storage[currentSize];
+      storage[currentSize] = null;
+      currentSize--;
+      // swap new root with smallest child
+      removeMinRecursive(1);
+      return element;             // so it compiles
+    }
+  }
+
+  private void removeMinRecursive(int current) {
+    int left              = current * 2;
+    int right             = left + 1;
+    Comparable leftChild  = storage[left];
+    Comparable rightChild = storage[right];
+
+    // return if current is out of bounds
+    if (current >= DEFAULT_SIZE) {
+      System.out.println("Node index out of bounds!");
+      return;
+    }
+    // return if children are out of bounds
+    if (current + 1 >= DEFAULT_SIZE || current + 2 >= DEFAULT_SIZE) {
+      System.out.println("Child index out of bounds!");
+      return;
+    }
+    // return if current is leaf node
+    if (leftChild == null&& rightChild == null) {
+      // System.out.println("Node is a leaf!");
+      return;
+    }
+
+    if (rightChild == null || leftChild.compareTo(rightChild) < 0) {
+      if (leftChild.compareTo(storage[current]) < 0) {
+        // swap left
+        storage[left]    = storage[current];
+        storage[current] = leftChild;
+        removeMinRecursive(left);
+      }
+    }
+    else if (leftChild == null || rightChild.compareTo(leftChild) < 0) {
+      if (leftChild.compareTo(storage[current]) < 0) {
+        // swap right
+        storage[right]   = storage[current];
+        storage[current] = rightChild;
+        removeMinRecursive(right);
+      }
+    }
   }
 
   public boolean isEmpty() {
