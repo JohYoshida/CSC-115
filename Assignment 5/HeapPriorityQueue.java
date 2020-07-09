@@ -49,8 +49,10 @@ public class HeapPriorityQueue implements PriorityQueue {
   }
 
   public boolean isEmpty() {
-    //TODO: Implement this
-    return false;             // so it compiles
+    if (currentSize == 0) {
+      return true;
+    }
+    return false;
   }
 
   public int size() {
