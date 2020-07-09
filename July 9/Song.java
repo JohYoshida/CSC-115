@@ -52,7 +52,9 @@ public class Song implements Comparable <Song> {
   }
 
   public int compareTo(Song other) {
-    // FIX THIS
-    return -1;
+    if (artist.compareTo(other.getArtist()) == 0) {
+      return title.compareTo(other.getTitle());
+    }
+    return artist.compareTo(other.getArtist());
   }
 }
