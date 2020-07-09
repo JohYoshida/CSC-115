@@ -40,35 +40,6 @@ public class HeapPriorityQueue implements PriorityQueue {
     currentSize = 0;
   }
 
-  // TODO: remove this before hand in
-  private void report() {
-    if (currentSize > 0) {
-      for (int i = 1; i < storage.length; i++) {
-        if (storage[i] != null) {
-          System.out.print(storage[i] + " ");
-        }
-      }
-      System.out.println();
-    }
-  }
-
-  // TODO: remove this before hand in
-  private void report(Comparable latest) {
-    if (currentSize > 0) {
-      for (int i = 1; i < storage.length; i++) {
-        if (storage[i] != null) {
-          if (storage[i] == latest) {
-            System.out.print("!" + storage[i] + "! ");
-          }
-          else {
-            System.out.print(storage[i] + " ");
-          }
-        }
-      }
-      System.out.println();
-    }
-  }
-
   public void insert(Comparable element) throws HeapFullException {
     if (currentSize == DEFAULT_SIZE) {
       throw new HeapFullException();
@@ -77,8 +48,6 @@ public class HeapPriorityQueue implements PriorityQueue {
       currentSize++;
       storage[currentSize] = element;
       insertRecursive(currentSize);
-      // TODO: remove this before hand in
-      // report(element);
     }
   }
 
