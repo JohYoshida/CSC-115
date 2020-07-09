@@ -56,8 +56,7 @@ public class HeapPriorityQueue implements PriorityQueue {
   }
 
   public int size() {
-    //TODO: Implement this
-    return -1;             // so it compiles
+    return currentSize;
   }
 
   public String toString() {
