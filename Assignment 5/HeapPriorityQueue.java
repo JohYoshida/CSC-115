@@ -69,13 +69,36 @@ public class HeapPriorityQueue implements PriorityQueue {
     }
   }
 
-  public void insert(Comparable element) {
-    //TODO: Implement this
+  public void insert(Comparable element) throws HeapFullException {
+    if (currentSize == DEFAULT_SIZE) {
+      throw new HeapFullException();
+    }
+    else {
+      currentSize++;
+      storage[currentSize] = element;
+      insertRecursive(currentSize);
+      // TODO: remove this before hand in
+      // report(element);
+    }
   }
 
   public Comparable removeMin() {
     //TODO: Implement this
     return null;             // so it compiles
+  private void insertRecursive(int current) {
+    if (current <= 1) {
+      return;
+    }
+    int parent = current / 2;
+    if (parent > 0) {
+      if (storage[current].compareTo(storage[parent]) < 0) {
+        Comparable temp = storage[parent];
+        storage[parent]  = storage[current];
+        storage[current] = temp;
+        insertRecursive(parent);
+      }
+    }
+  }
   }
 
   public boolean isEmpty() {
