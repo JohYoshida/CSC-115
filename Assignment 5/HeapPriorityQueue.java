@@ -41,22 +41,22 @@ public class HeapPriorityQueue implements PriorityQueue {
   }
 
   public void insert(Comparable element) throws HeapFullException {
-    if (currentSize == DEFAULT_SIZE) {
+    if (currentSize >= storage.length) {
       throw new HeapFullException();
     }
     else {
-      currentSize++;
       storage[currentSize] = element;
-      insertRecursive(currentSize);
+      currentSize++;
+      insertRecursive(currentSize - 1);
     }
   }
 
   private void insertRecursive(int current) {
-    if (current <= 1) {
+    if (current <= 0) {
       return;
     }
     int parent = current / 2;
-    if (parent > 0) {
+    if (parent >= 0) {
       if (storage[current].compareTo(storage[parent]) < 0) {
         Comparable temp = storage[parent];
         storage[parent]  = storage[current];
@@ -72,53 +72,74 @@ public class HeapPriorityQueue implements PriorityQueue {
     }
     else {
       // replace root with rightmost leaf
-      Comparable element = storage[1];
-      storage[1]           = storage[currentSize];
-      storage[currentSize] = null;
+      Comparable element = storage[0];
       currentSize--;
+      storage[0]           = storage[currentSize];
+      storage[currentSize] = null;
       // swap new root with smallest child
-      removeMinRecursive(1);
+      removeMinRecursive(0);
       return element;             // so it compiles
     }
   }
 
   private void removeMinRecursive(int current) {
-    int left              = current * 2;
-    int right             = left + 1;
+    int left  = current * 2 + 1;
+    int right = left + 1;
+
+    // return if current is out of bounds
+    if (current >= storage.length) {
+      // System.out.println("Node index out of bounds!");
+      return;
+    }
+    // return if left child is out of bounds
+    if (left >= storage.length) {
+      // System.out.println("Left child index out of bounds!");
+      return;
+    }
+    // return if right child is out of bounds
+    if (right >= storage.length) {
+      // System.out.println("Right child index out of bounds!");
+      return;
+    }
+
     Comparable leftChild  = storage[left];
     Comparable rightChild = storage[right];
 
-    // return if current is out of bounds
-    if (current >= DEFAULT_SIZE) {
-      System.out.println("Node index out of bounds!");
-      return;
-    }
-    // return if children are out of bounds
-    if (current + 1 >= DEFAULT_SIZE || current + 2 >= DEFAULT_SIZE) {
-      System.out.println("Child index out of bounds!");
-      return;
-    }
     // return if current is leaf node
     if (leftChild == null&& rightChild == null) {
       // System.out.println("Node is a leaf!");
       return;
     }
 
+    // System.out.println(this.toString());
+    // System.out.println(storage[current] + " @ " + current + " (" + left + "," + right + ") " + leftChild + "^" + rightChild);
     if (rightChild == null || leftChild.compareTo(rightChild) < 0) {
-      if (leftChild.compareTo(storage[current]) < 0) {
+      // System.out.println("left");
+      if (leftChild.compareTo(storage[current]) <= 0) {
         // swap left
+        // System.out.println("swap left\n");
         storage[left]    = storage[current];
         storage[current] = leftChild;
         removeMinRecursive(left);
       }
     }
     else if (leftChild == null || rightChild.compareTo(leftChild) < 0) {
-      if (leftChild.compareTo(storage[current]) < 0) {
+      // System.out.println("right");
+      if (rightChild.compareTo(storage[current]) <= 0) {
         // swap right
+        // System.out.println("swap right\n");
         storage[right]   = storage[current];
         storage[current] = rightChild;
         removeMinRecursive(right);
       }
+    }
+    else {
+      // swap left
+      // System.out.print("Oops! ");
+      // System.out.println("swap left\n");
+      storage[left]    = storage[current];
+      storage[current] = leftChild;
+      removeMinRecursive(left);
     }
   }
 
