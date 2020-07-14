@@ -22,6 +22,28 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
   }
 
   private void insert(Integer value, TreeNode current) {
+    if (value < current.getValue()) {
+      // System.out.println("less");
+      if (current.getLeft() != null) {
+        // System.out.println("moving left");
+        insert(value, current.getLeft());
+      }
+      else {
+        // System.out.println("setting value " + value + " left of " + current.getValue());
+        current.setLeft(new TreeNode(value));
+      }
+    }
+    else if (value > current.getValue()) {
+      // System.out.println("greater");
+      if (current.getRight() != null) {
+        // System.out.println("moving right");
+        insert(value, current.getRight());
+      }
+      else {
+        // System.out.println("setting value " + value + " right of " + current.getValue());
+        current.setRight(new TreeNode(value));
+      }
+    }
   }
 
   public static void main(String[] args) {
