@@ -18,6 +18,12 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     // TODO
   }
 
+  private void insertIterative(Integer value) {
+  }
+
+  private void insert(Integer value, TreeNode current) {
+  }
+
   public static void main(String[] args) {
     // use these trees to test the methods you will implement
     RefBasedBinarySearchTree emptyTree = new RefBasedBinarySearchTree();
