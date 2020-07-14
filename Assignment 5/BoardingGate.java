@@ -69,7 +69,11 @@ public class BoardingGate {
    *  Passenger - the next Passenger, null if there is no more Passengers.
    */
   public Passenger nextPassenger() {
-    // TODO: implement this
-    return null;             // so it compiles
+    try {
+      return (Passenger)passengers.removeMin();
+    } catch (HeapEmptyException e) {
+      // System.out.println("The line is empty!");
+      return null;
+    }
   }
 }
