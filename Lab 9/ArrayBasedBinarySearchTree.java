@@ -19,15 +19,15 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
 
     while (data[current] != null) {
       if (value < data[current]) {
-        System.out.println("moving left");
+        // System.out.println("moving left");
         current = getLeft(current);
       }
       else if (value > data[current]) {
-        System.out.println("moving right");
+        // System.out.println("moving right");
         current = getRight(current);
       }
     }
-    System.out.println("setting value " + value + " at " + current);
+    // System.out.println("setting value " + value + " at " + current);
     data[current] = value;
   }
 
