@@ -9,11 +9,26 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
       data[0] = value;
     }
     else {
-      insert(value, 0);
+      // insert(value, 0);
+      insertIterative(value);
     }
   }
 
   private void insertIterative(Integer value) {
+    int current = 0;
+
+    while (data[current] != null) {
+      if (value < data[current]) {
+        System.out.println("moving left");
+        current = getLeft(current);
+      }
+      else if (value > data[current]) {
+        System.out.println("moving right");
+        current = getRight(current);
+      }
+    }
+    System.out.println("setting value " + value + " at " + current);
+    data[current] = value;
   }
 
   private void insert(Integer value, int current) {
