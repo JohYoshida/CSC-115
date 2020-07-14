@@ -29,7 +29,7 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     TreeNode current = this.root;
 
     while (current != null) {
-      if (value < current.getValue()) {
+      if (value <= current.getValue()) {
         if (current.getLeft() == null) {
           // System.out.println("setting left to " + value);
           current.setLeft(new TreeNode(value));
@@ -55,7 +55,7 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
   }
 
   private void insert(Integer value, TreeNode current) {
-    if (value < current.getValue()) {
+    if (value <= current.getValue()) {
       // System.out.println("less");
       if (current.getLeft() != null) {
         // System.out.println("moving left");
@@ -133,5 +133,9 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     catch (TreeEmptyException e) {
       System.out.println("Shouldn't reach this exception");
     }
+    System.out.println("level order");
+    myTree.levelOrder();
+    myTree.insert(3);
+    myTree.levelOrder();
   }
 }

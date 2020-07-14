@@ -18,7 +18,7 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
     int current = 0;
 
     while (data[current] != null) {
-      if (value < data[current]) {
+      if (value <= data[current]) {
         // System.out.println("moving left");
         current = getLeft(current);
       }
@@ -32,7 +32,7 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
   }
 
   private void insert(Integer value, int current) {
-    if (value < data[current]) {
+    if (value <= data[current]) {
       // System.out.println("less");
       int left = getLeft(current);
       if (data[left] != null) {
