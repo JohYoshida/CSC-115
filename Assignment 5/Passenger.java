@@ -94,7 +94,6 @@ public class Passenger implements Comparable <Passenger> {
    * Returns: true if this Passenger is the same as other, false otherwise
    */
   public boolean equals(Passenger other) {
-    //TODO: implement this
-    return false;             // so it compiles
+    return this.passport.equals(other.passport);
   }
 }
