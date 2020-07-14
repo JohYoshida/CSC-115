@@ -186,7 +186,27 @@ public class RefBasedBinaryTree implements BinaryTree {
   }
 
   public int getMax() throws TreeEmptyException {
-    return -1;
+    if (root == null) {
+      throw new TreeEmptyException();
+    }
+    else {
+      int max = root.getValue();
+      max = getMax(max, root);
+      return max;
+    }
+  }
+
+  private int getMax(int current, TreeNode t) {
+    if (t == null) {
+      return current;
+    }
+    System.out.println("value " + t.getValue());
+    if (current < t.getValue()) {
+      current = t.getValue();
+    }
+    current = getMax(current, t.getLeft());
+    current = getMax(current, t.getRight());
+    return current;
   }
 
   /*

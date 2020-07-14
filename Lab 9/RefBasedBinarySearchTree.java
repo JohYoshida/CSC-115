@@ -79,8 +79,22 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     }
   }
 
-  public int getMax() {
-    return -1;
+  public int getMax() throws TreeEmptyException {
+    if (this.root == null) {
+      throw new TreeEmptyException();
+    }
+    else {
+      return getMax(root.getValue(), root);
+    }
+  }
+
+  private int getMax(int current, TreeNode n) {
+    if (n == null) {
+      return current;
+    }
+    else {
+      return getMax(n.getValue(), n.getRight());
+    }
   }
 
   public void levelOrder() {
@@ -108,5 +122,20 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     myTree.postOrder();
 
     System.out.println("toString\n" + myTree);
+
+    System.out.println("sum " + myTree.sum());
+    System.out.println("find " + myTree.find(6));
+    System.out.println("getMax empty");
+    try {
+      emptyTree.getMax();
+    } catch (TreeEmptyException e) {
+      System.out.println("Caught TreeEmptyException");
+    }
+    try {
+      System.out.println("getMax not empty " + myTree.getMax());
+    }
+    catch (TreeEmptyException e) {
+      System.out.println("Shouldn't reach this exception");
+    }
   }
 }
