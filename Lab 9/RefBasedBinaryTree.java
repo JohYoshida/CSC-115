@@ -147,7 +147,22 @@ public class RefBasedBinaryTree implements BinaryTree {
   }
 
   public int sum() {
-    return -1;
+    return sum(root);
+  }
+
+  private int sum(TreeNode t) {
+    if (t == null) {
+      return 0;
+    }
+    else {
+      int s = 0;
+
+      s += sum(t.getLeft());
+      s += t.getValue();
+      s += sum(t.getRight());
+
+      return s;
+    }
   }
 
   public boolean find(int value) {
