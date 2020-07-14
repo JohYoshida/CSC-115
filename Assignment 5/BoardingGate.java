@@ -36,7 +36,11 @@ public class BoardingGate {
    *  None.
    */
   public void addPassenger(Passenger p) {
-    // TODO: implement this
+    try {
+      passengers.insert(p);
+    } catch (HeapFullException e) {
+      // System.out.println("The line is full!");
+    }
   }
 
   /* numPassengersWaiting
