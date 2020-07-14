@@ -54,8 +54,7 @@ public class BoardingGate {
    *  int - number of passengers waiting to board
    */
   public int numPassengersWaiting() {
-    // TODO: implement this
-    return -1;             // so it compiles
+    return passengers.size();
   }
 
   /* nextPassenger
