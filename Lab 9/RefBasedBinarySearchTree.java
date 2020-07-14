@@ -10,6 +10,10 @@ import java.lang.Math;
  * A ref-based BinaryTree meant to store values of type Integer
  */
 public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
+  public RefBasedBinarySearchTree() {
+    super();
+  }
+
   public static void main(String[] args) {
     // use these trees to test the methods you will implement
     RefBasedBinarySearchTree emptyTree = new RefBasedBinarySearchTree();
