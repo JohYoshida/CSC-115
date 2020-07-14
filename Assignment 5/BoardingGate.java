@@ -14,14 +14,14 @@ public class BoardingGate {
    * constructor that initializes passengers to a default-sized priority queue
    */
   public BoardingGate() {
-    // TODO: implement this
+    passengers = new HeapPriorityQueue();
   }
 
   /*
    * constructor that initializes passengers to a priority queue of given size
    */
   public BoardingGate(int size) {
-    // TODO: implement this
+    passengers = new HeapPriorityQueue(size);
   }
 
   /* addPassenger
