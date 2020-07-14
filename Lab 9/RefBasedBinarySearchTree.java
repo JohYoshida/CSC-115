@@ -15,10 +15,43 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
   }
 
   public void insert(Integer value) {
-    // TODO
+    // System.out.println("value " + value);
+    if (this.root == null) {
+      this.root = new TreeNode(value);
+    }
+    else {
+      insertIterative(value);
+      // insert(value, this.root);
+    }
   }
 
   private void insertIterative(Integer value) {
+    TreeNode current = this.root;
+
+    while (current != null) {
+      if (value < current.getValue()) {
+        if (current.getLeft() == null) {
+          // System.out.println("setting left to " + value);
+          current.setLeft(new TreeNode(value));
+          current = null;
+        }
+        else {
+          // System.out.println("moving left");
+          current = current.getLeft();
+        }
+      }
+      else if (value > current.getValue()) {
+        if (current.getRight() == null) {
+          // System.out.println("setting right to " + value);
+          current.setRight(new TreeNode(value));
+          current = null;
+        }
+        else {
+          // System.out.println("moving right");
+          current = current.getRight();
+        }
+      }
+    }
   }
 
   private void insert(Integer value, TreeNode current) {
