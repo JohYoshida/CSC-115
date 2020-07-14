@@ -78,7 +78,7 @@ public class HeapPriorityQueue implements PriorityQueue {
       storage[currentSize] = null;
       // swap new root with smallest child
       removeMinRecursive(0);
-      return element;             // so it compiles
+      return element;
     }
   }
 
@@ -107,27 +107,20 @@ public class HeapPriorityQueue implements PriorityQueue {
 
     // return if current is leaf node
     if (leftChild == null&& rightChild == null) {
-      // System.out.println("Node is a leaf!");
       return;
     }
 
-    // System.out.println(this.toString());
-    // System.out.println(storage[current] + " @ " + current + " (" + left + "," + right + ") " + leftChild + "^" + rightChild);
     if (rightChild == null || leftChild.compareTo(rightChild) < 0) {
-      // System.out.println("left");
       if (leftChild.compareTo(storage[current]) <= 0) {
         // swap left
-        // System.out.println("swap left\n");
         storage[left]    = storage[current];
         storage[current] = leftChild;
         removeMinRecursive(left);
       }
     }
     else if (leftChild == null || rightChild.compareTo(leftChild) < 0) {
-      // System.out.println("right");
       if (rightChild.compareTo(storage[current]) <= 0) {
         // swap right
-        // System.out.println("swap right\n");
         storage[right]   = storage[current];
         storage[current] = rightChild;
         removeMinRecursive(right);
@@ -135,8 +128,6 @@ public class HeapPriorityQueue implements PriorityQueue {
     }
     else {
       // swap left
-      // System.out.print("Oops! ");
-      // System.out.println("swap left\n");
       storage[left]    = storage[current];
       storage[current] = leftChild;
       removeMinRecursive(left);
