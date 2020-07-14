@@ -7,6 +7,12 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
     // TODO:
   }
 
+  public void insertIterative(Integer value) {
+  }
+
+  public void insertRecursive(Integer value) {
+  }
+
   public static void main(String[] args) {
     ArrayBasedBinarySearchTree emptyTree = new ArrayBasedBinarySearchTree();
 
