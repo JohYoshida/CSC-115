@@ -143,7 +143,27 @@ public class RefBasedBinaryTree implements BinaryTree {
   }
 
   public void levelOrder() {
-    return;
+    if (root == null) {
+      return;
+    }
+    int height = height(root);
+    for (int i = 1; i <= height + 1; i++) {
+      printLevel(root, i);
+    }
+    System.out.println();
+  }
+
+  private void printLevel(TreeNode t, int level) {
+    if (t == null) {
+      return;
+    }
+    if (level == 1) {
+      System.out.print(t.getValue() + " ");
+    }
+    else {
+      printLevel(t.getLeft(), level - 1);
+      printLevel(t.getRight(), level - 1);
+    }
   }
 
   public int sum() {
