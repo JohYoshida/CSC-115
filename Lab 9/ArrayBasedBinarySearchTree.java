@@ -3,6 +3,10 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
     super();
   }
 
+  public void insert(Integer value) {
+    // TODO:
+  }
+
   public static void main(String[] args) {
     ArrayBasedBinarySearchTree emptyTree = new ArrayBasedBinarySearchTree();
 
