@@ -166,6 +166,22 @@ public class RefBasedBinaryTree implements BinaryTree {
   }
 
   public boolean find(int value) {
+    return find(value, root);
+  }
+
+  private boolean find(int value, TreeNode t) {
+    if (t == null) {
+      return false;
+    }
+    if (t.getValue() == value) {
+      return true;
+    }
+    if (find(value, t.getLeft()) == true) {
+      return true;
+    }
+    if (find(value, t.getRight()) == true) {
+      return true;
+    }
     return false;
   }
 
