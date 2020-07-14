@@ -79,6 +79,14 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     }
   }
 
+  public int getMax() {
+    return -1;
+  }
+
+  public void levelOrder() {
+    return;
+  }
+
   public static void main(String[] args) {
     // use these trees to test the methods you will implement
     RefBasedBinarySearchTree emptyTree = new RefBasedBinarySearchTree();

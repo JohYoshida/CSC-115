@@ -142,6 +142,22 @@ public class RefBasedBinaryTree implements BinaryTree {
     }
   }
 
+  public void levelOrder() {
+    return;
+  }
+
+  public int sum() {
+    return -1;
+  }
+
+  public boolean find(int value) {
+    return false;
+  }
+
+  public int getMax() throws TreeEmptyException {
+    return -1;
+  }
+
   /*
    * Purpose: returns a String reprensentation of this BinaryTree
    * Parameters: none
