@@ -14,23 +14,6 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
     }
   }
 
-  private void insertIterative(Integer value) {
-    int current = 0;
-
-    while (data[current] != null) {
-      if (value <= data[current]) {
-        // System.out.println("moving left");
-        current = getLeft(current);
-      }
-      else if (value > data[current]) {
-        // System.out.println("moving right");
-        current = getRight(current);
-      }
-    }
-    // System.out.println("setting value " + value + " at " + current);
-    data[current] = value;
-  }
-
   private void insert(Integer value, int current) {
     if (value <= data[current]) {
       // System.out.println("less");
@@ -56,6 +39,23 @@ public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
         data[right] = value;
       }
     }
+  }
+
+  private void insertIterative(Integer value) {
+    int current = 0;
+
+    while (data[current] != null) {
+      if (value <= data[current]) {
+        // System.out.println("moving left");
+        current = getLeft(current);
+      }
+      else if (value > data[current]) {
+        // System.out.println("moving right");
+        current = getRight(current);
+      }
+    }
+    // System.out.println("setting value " + value + " at " + current);
+    data[current] = value;
   }
 
   public static void main(String[] args) {
