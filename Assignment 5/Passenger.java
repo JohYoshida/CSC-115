@@ -79,8 +79,13 @@ public class Passenger implements Comparable <Passenger> {
    *
    */
   public int compareTo(Passenger other) {
-    //TODO: implement this
-    return -1;             // so it compiles
+    int result = this.boardingZone - other.boardingZone;
+
+    if (result == 0) {
+      result = this.checkinTime.compareTo(other.checkinTime);
+    }
+
+    return result;
   }
 
   /* Method Name: equals
