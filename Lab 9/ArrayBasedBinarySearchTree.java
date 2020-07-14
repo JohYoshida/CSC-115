@@ -1,4 +1,8 @@
 public class ArrayBasedBinarySearchTree extends ArrayBasedBinaryTree {
+  public ArrayBasedBinarySearchTree() {
+    super();
+  }
+
   public static void main(String[] args) {
     ArrayBasedBinarySearchTree emptyTree = new ArrayBasedBinarySearchTree();
 
