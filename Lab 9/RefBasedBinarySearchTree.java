@@ -72,7 +72,8 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
       throw new TreeEmptyException();
     }
     else {
-      return getMax(root.getValue(), root);
+      return getMaxIterative();
+      // return getMax(root.getValue(), root);
     }
   }
 
@@ -83,6 +84,17 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     else {
       return getMax(n.getValue(), n.getRight());
     }
+  }
+
+  private int getMaxIterative() {
+    TreeNode current = root;
+    int max          = root.getValue();
+
+    while (current != null) {
+      max     = current.getValue();
+      current = current.getRight();
+    }
+    return max;
   }
 
   public static void main(String[] args) {
