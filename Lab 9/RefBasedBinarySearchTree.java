@@ -15,36 +15,28 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
   }
 
   public void insert(Integer value) {
-    // System.out.println("value " + value);
     if (this.root == null) {
       this.root = new TreeNode(value);
     }
     else {
       insertIterative(value);
-      // insert(value, this.root);
     }
   }
 
   private void insert(Integer value, TreeNode current) {
     if (value <= current.getValue()) {
-      // System.out.println("less");
       if (current.getLeft() != null) {
-        // System.out.println("moving left");
         insert(value, current.getLeft());
       }
       else {
-        // System.out.println("setting value " + value + " left of " + current.getValue());
         current.setLeft(new TreeNode(value));
       }
     }
     else if (value > current.getValue()) {
-      // System.out.println("greater");
       if (current.getRight() != null) {
-        // System.out.println("moving right");
         insert(value, current.getRight());
       }
       else {
-        // System.out.println("setting value " + value + " right of " + current.getValue());
         current.setRight(new TreeNode(value));
       }
     }
@@ -56,23 +48,19 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     while (current != null) {
       if (value <= current.getValue()) {
         if (current.getLeft() == null) {
-          // System.out.println("setting left to " + value);
           current.setLeft(new TreeNode(value));
           current = null;
         }
         else {
-          // System.out.println("moving left");
           current = current.getLeft();
         }
       }
       else if (value > current.getValue()) {
         if (current.getRight() == null) {
-          // System.out.println("setting right to " + value);
           current.setRight(new TreeNode(value));
           current = null;
         }
         else {
-          // System.out.println("moving right");
           current = current.getRight();
         }
       }
