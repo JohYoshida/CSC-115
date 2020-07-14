@@ -14,6 +14,10 @@ public class RefBasedBinarySearchTree extends RefBasedBinaryTree {
     super();
   }
 
+  public void insert(Integer value) {
+    // TODO
+  }
+
   public static void main(String[] args) {
     // use these trees to test the methods you will implement
     RefBasedBinarySearchTree emptyTree = new RefBasedBinarySearchTree();
