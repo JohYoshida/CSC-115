@@ -64,7 +64,8 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    * Returns: nothing
    */
   public void clear() {
-    // TODO: implement this
+    root  = null;
+    count = 0;
   }
 
   /*
