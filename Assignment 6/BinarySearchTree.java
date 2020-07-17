@@ -55,8 +55,7 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    * Returns: int - the number of nodes in the tree.
    */
   public int size() {
-    // TODO: implement this
-    return -1;             // so it compiles
+    return count;
   }
 
   /*
