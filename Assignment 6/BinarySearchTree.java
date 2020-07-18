@@ -36,6 +36,8 @@ class BinarySearchTree <K extends Comparable <K>, V> {
   public void insert(K key, V value) {
     BSTNode node = new BSTNode(key, value);
 
+    // TODO: remove console printouts
+
     // System.out.println();
     if (root == null) {
       // System.out.println(" - inserting " + node.key + " : " + node.value);
