@@ -82,8 +82,27 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    * Throws: KeyNotFoundException if key isn't in the tree
    */
   public V find(K key) throws KeyNotFoundException {
-    // TODO: implement this
-    throw new KeyNotFoundException();
+    if (root == null) {
+      throw new KeyNotFoundException();
+    }
+    BSTNode node = new BSTNode(key, null);
+    return find(node, root);
+  }
+
+  private V find(BSTNode node, BSTNode current) throws KeyNotFoundException {
+    if (current.left == null&& current.right == null) {
+      if (node.key.compareTo(current.key) == 0) {
+        return (V)current.value;
+      }
+      throw new KeyNotFoundException();
+    }
+    else if (node.key.compareTo(current.key) < 0) {
+      return find(node, current.left);
+    }
+    else if (node.key.compareTo(current.key) > 0) {
+      return find(node, current.right);
+    }
+    return (V)current.value;
   }
 
   /*
@@ -119,7 +138,22 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    */
   public int height() {
     // TODO: implement this
-    return -1;             // so it compiles
+    if (root == null) {
+      return -1;             // so it compiles
+    }
+    else {
+      return height(root);
+    }
+  }
+
+  private int height(BSTNode current) {
+    if (current == null) {
+      return -1;
+    }
+    else {
+      int highest = Math.max(height(current.left), height(current.right));
+      return 1 + highest;
+    }
   }
 
   /*
