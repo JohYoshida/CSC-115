@@ -36,11 +36,8 @@ class BinarySearchTree <K extends Comparable <K>, V> {
   public void insert(K key, V value) {
     BSTNode node = new BSTNode(key, value);
 
-    // TODO: remove console printouts
 
-    // System.out.println();
     if (root == null) {
-      // System.out.println(" - inserting " + node.key + " : " + node.value);
       root = node;
       count++;
     }
@@ -51,9 +48,7 @@ class BinarySearchTree <K extends Comparable <K>, V> {
 
   private void insert(BSTNode current, BSTNode node) {
     if (node.key.compareTo(current.key) < 0) {
-      // System.out.println(" - key " + node.key + " is less than " + current.key + ", move left to " + current.left);
       if (current.left == null) {
-        // System.out.println(" - inserting " + node.key + " : " + node.value);
         current.left = node;
         count++;
         return;
@@ -61,9 +56,7 @@ class BinarySearchTree <K extends Comparable <K>, V> {
       insert(current.left, node);
     }
     else if (node.key.compareTo(current.key) > 0) {
-      // System.out.println(" - key " + node.key + " is greater than " + current.key + ", move right to " + current.right);
       if (current.right == null) {
-        // System.out.println(" - inserting " + node.key + " : " + node.value);
         current.right = node;
         count++;
         return;
@@ -71,7 +64,6 @@ class BinarySearchTree <K extends Comparable <K>, V> {
       insert(current.right, node);
     }
     else {
-      // System.out.println(" - equal key, replace");
       current.value = node.value;
     }
   }
