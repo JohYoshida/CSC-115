@@ -274,7 +274,7 @@ class BinarySearchTree <K extends Comparable <K>, V> {
       return -1;
     }
     else {
-      return 1 + Math.max(height(t.left), height(t.right));
+      return 1 + Math.max(heightRecursive(t.left), heightRecursive(t.right));
     }
   }
 }
