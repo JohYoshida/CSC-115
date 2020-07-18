@@ -239,4 +239,17 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    * private void postOrderRecursive (BSTNode<K,V> n, List <Entry<K,V>> l);
    * private int heightRecursive (BSTNode<K,V> t)
    */
+
+  private void inOrderRecursive(BSTNode <K, V> n, List <Entry <K, V> > l) {
+  }
+
+  private void preOrderRecursive(BSTNode <K, V> n, List <Entry <K, V> > l) {
+  }
+
+  private void postOrderRecursive(BSTNode <K, V> n, List <Entry <K, V> > l) {
+  }
+
+  private int heightRecursive(BSTNode <K, V> t) {
+    return -1
+  }
 }
