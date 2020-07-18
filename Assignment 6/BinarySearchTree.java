@@ -205,7 +205,15 @@ class BinarySearchTree <K extends Comparable <K>, V> {
   public List <Entry <K, V> > entryList(int whichTraversal) {
     List <Entry <K, V> > l = new LinkedList <Entry <K, V> >();
 
-    // TODO: implement this
+    if (whichTraversal == 1) {
+      preOrderRecursive(root, l);
+    }
+    if (whichTraversal == 2) {
+      postOrderRecursive(root, l);
+    }
+    if (whichTraversal == 3) {
+      inOrderRecursive(root, l);
+    }
     return l;
   }
 
