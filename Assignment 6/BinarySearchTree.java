@@ -219,12 +219,46 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    */
 
   private void inOrderRecursive(BSTNode <K, V> n, List <Entry <K, V> > l) {
+    if (n == null) {
+      return;
+    }
+    if (n.left != null) {
+      inOrderRecursive(n.left, l);
+    }
+    Entry e = new Entry <K, V>(n.key, n.value);
+    l.add(e);
+    if (n.right != null) {
+      inOrderRecursive(n.right, l);
+    }
   }
 
   private void preOrderRecursive(BSTNode <K, V> n, List <Entry <K, V> > l) {
+    if (n == null) {
+      return;
+    }
+    Entry e = new Entry <K, V>(n.key, n.value);
+    System.out.println(n);
+    l.add(e);
+    if (n.left != null) {
+      preOrderRecursive(n.left, l);
+    }
+    if (n.right != null) {
+      preOrderRecursive(n.right, l);
+    }
   }
 
   private void postOrderRecursive(BSTNode <K, V> n, List <Entry <K, V> > l) {
+    if (n == null) {
+      return;
+    }
+    if (n.left != null) {
+      postOrderRecursive(n.left, l);
+    }
+    if (n.right != null) {
+      postOrderRecursive(n.right, l);
+    }
+    Entry e = new Entry <K, V>(n.key, n.value);
+    l.add(e);
   }
 
   private int heightRecursive(BSTNode <K, V> t) {
