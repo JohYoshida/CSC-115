@@ -131,23 +131,7 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    * See the assignment PDF and the test program for examples.
    */
   public int height() {
-    // TODO: implement this
-    if (root == null) {
-      return -1;             // so it compiles
-    }
-    else {
-      return height(root);
-    }
-  }
-
-  private int height(BSTNode current) {
-    if (current == null) {
-      return -1;
-    }
-    else {
-      int highest = Math.max(height(current.left), height(current.right));
-      return 1 + highest;
-    }
+    return heightRecursive(root);
   }
 
   /*
@@ -244,6 +228,11 @@ class BinarySearchTree <K extends Comparable <K>, V> {
   }
 
   private int heightRecursive(BSTNode <K, V> t) {
-    return -1
+    if (t == null) {
+      return -1;
+    }
+    else {
+      return 1 + Math.max(height(t.left), height(t.right));
+    }
   }
 }
