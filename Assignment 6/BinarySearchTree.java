@@ -197,6 +197,18 @@ class BinarySearchTree <K extends Comparable <K>, V> {
     LinkedList <BSTNode <K, V> > q = new LinkedList <BSTNode <K, V> >();
 
     // TODO: implement this
+    // TODO: are we allowed to use q.size() ?
+    q.addLast(root);
+    while (q.size() != 0) {
+      BSTNode node = q.removeFirst();
+      l.add(new Entry(node.key, node.value));
+      if (node.left != null) {
+        q.addLast(node.left);
+      }
+      if (node.right != null) {
+        q.addLast(node.right);
+      }
+    }
     return l;
   }
 
