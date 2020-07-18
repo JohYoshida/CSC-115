@@ -34,7 +34,44 @@ class BinarySearchTree <K extends Comparable <K>, V> {
    * Pre-Conditions: the tree is a valid binary search tree
    */
   public void insert(K key, V value) {
-    // TODO: implement this
+    BSTNode node = new BSTNode(key, value);
+
+    // System.out.println();
+    if (root == null) {
+      // System.out.println(" - inserting " + node.key + " : " + node.value);
+      root = node;
+      count++;
+    }
+    else {
+      insert(root, node);
+    }
+  }
+
+  private void insert(BSTNode current, BSTNode node) {
+    if (node.key.compareTo(current.key) < 0) {
+      // System.out.println(" - key " + node.key + " is less than " + current.key + ", move left to " + current.left);
+      if (current.left == null) {
+        // System.out.println(" - inserting " + node.key + " : " + node.value);
+        current.left = node;
+        count++;
+        return;
+      }
+      insert(current.left, node);
+    }
+    else if (node.key.compareTo(current.key) > 0) {
+      // System.out.println(" - key " + node.key + " is greater than " + current.key + ", move right to " + current.right);
+      if (current.right == null) {
+        // System.out.println(" - inserting " + node.key + " : " + node.value);
+        current.right = node;
+        count++;
+        return;
+      }
+      insert(current.right, node);
+    }
+    else {
+      // System.out.println(" - equal key, replace");
+      current.value = node.value;
+    }
   }
 
   /*
