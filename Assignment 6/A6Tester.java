@@ -73,12 +73,12 @@ public class A6Tester {
       test_insert_find();
 
       tree1_test();
-      // tree2_test();
-      // tree3_test();
-      // tree4_test();
+      tree2_test();
+      tree3_test();
+      tree4_test();
 
-      // map1_test();
-      // map2_test();
+      map1_test();
+      map2_test();
     }
     catch (Exception e) {
       System.out.println("Unhandled exception in tester: " + e);
