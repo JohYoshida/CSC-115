@@ -16,7 +16,25 @@ public class Hashtable {
    *          CollisionException - if inserting a new key into table at index that is full
    * Returns: nothing
    */
-  // TODO: complete this function
+  public void insertCollisions(Student s) throws TableFullException, CollisionException {
+    if (count == 7) {
+      throw new TableFullException();
+    }
+    int hash  = s.hashCode();
+    int index = hash % TABLE_SZ;
+    if (table[index] == null) {
+      table[index] = s;
+      count++;
+    }
+    else {
+      if (table[index].getSID() == s.getSID()) {
+        table[index] = s;
+      }
+      else {
+        throw new CollisionException();
+      }
+    }
+  }
 
   /* MethodName: getCollisions
    * Purpose: find Student with sid in this Hashtable with no collision handling and returns their grade
