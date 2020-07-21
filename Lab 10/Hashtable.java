@@ -60,6 +60,50 @@ public class Hashtable {
    * Returns: nothing
    */
   // TODO: complete this function
+  public void insertLinearProbing(Student s) throws TableFullException {
+    if (count == 7) {
+      throw new TableFullException();
+    }
+    int hash  = s.hashCode();
+    int index = hash % TABLE_SZ;
+    if (table[index] == null) {
+      table[index] = s;
+      count++;
+    }
+    else {
+      if (table[index].getSID() == s.getSID()) {
+        table[index] = s;
+        return;
+      }
+      index = linearProbe(++index, hash);
+      if (index != -1) {
+        table[index] = s;
+        count++;
+      }
+      else {
+        throw new TableFullException();
+      }
+    }
+  }
+
+  private int linearProbe(int index, int hash) {
+    if (index == hash % TABLE_SZ) {
+      // completed full probe of table space
+      return -1;
+    }
+    if (index >= 7) {
+      // loop to beginning of table
+      return linearProbe(0, hash);
+    }
+    if (table[index] == null) {
+      // found empty space
+      return index;
+    }
+    else {
+      // recursively probe
+      return linearProbe(++index, hash);
+    }
+  }
 
   /* getLinearProbing
    * Purpose: find Student with sid in this Hashtable that uses Linear Probing and returns their grade
