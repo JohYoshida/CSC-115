@@ -1,3 +1,8 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
+
 public class Hashtable {
   private static final int TABLE_SZ = 7;   // a prime number
 
