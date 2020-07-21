@@ -112,8 +112,27 @@ public class Hashtable {
    * Returns: int - the grade of Student with sid
    */
   // TODO: complete this function
+  public int getLinearProbing(String sID) throws KeyNotFoundException {
+    int index = sID.hashCode() % TABLE_SZ;
 
-
+    for (int i = index; i < index + TABLE_SZ; i++) {
+      if (i > 6) {
+        if (table[i - 7] != null) {
+          if (table[i - 7].getSID() == sID) {
+            return table[i - 7].getGrade();
+          }
+        }
+      }
+      else {
+        if (table[i] != null) {
+          if (table[i].getSID() == sID) {
+            return table[i].getGrade();
+          }
+        }
+      }
+    }
+    throw new KeyNotFoundException();
+  }
 
   /*
    * Purpose: returns the number of elements in this Hashtable
