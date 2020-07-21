@@ -42,7 +42,16 @@ public class Hashtable {
    * Throws:  KeyNotFoundException  - if Student with sid is not found in table
    * Returns: int - the grade of Student with sid
    */
-  // TODO: complete this function
+  public int getCollisions(String sID) throws KeyNotFoundException {
+    int index = sID.hashCode() % TABLE_SZ;
+
+    if (table[index] != null) {
+      if (table[index].getSID() == sID) {
+        return table[index].getGrade();
+      }
+    }
+    throw new KeyNotFoundException();
+  }
 
   /* MethodName: insertLinearProbing
    * Purpose: insert s into this Hashtable with Linear Probing to handle collisions
