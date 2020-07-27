@@ -1,3 +1,7 @@
+/*
+ * Joh Yoshida
+ * V00798535
+ */
 import java.util.*;
 
 public class HashMap <K extends Comparable <K>, V> implements Map <K, V> {
