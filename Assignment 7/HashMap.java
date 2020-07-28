@@ -89,11 +89,6 @@ public class HashMap <K extends Comparable <K>, V> implements Map <K, V> {
         }
       }
     }
-    // Tip: you will need to iterate through each index in the table (and each index holds a list)
-    //      you will THEN need to iterate through each element in the linked list chain at a
-    //      specific index and add each element to l
-
-
     return l;
   }
 
@@ -122,9 +117,6 @@ public class HashMap <K extends Comparable <K>, V> implements Map <K, V> {
         chain.add(entry);
       }
     }
-
-    // if key is found, update value.  if key is not found add a new Entry with key,value
-    // The tester expects that you will add the newest Entry to the END of the list
   }
 
   public int size() {
